@@ -1,0 +1,89 @@
+---
+import { Icon } from "astro-icon";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+---
+
+<header class="py-10">
+    <div class="container flex-none justify-between mx-auto w-full lg:flex">
+        <Astronav>
+            <div class="flex justify-between">
+                <a href="/">
+                    <img src="/images/logo.svg" alt="Logo" class="w-56" />
+                </a>
+                <div class="block lg:hidden">
+                    <MenuIcon class="w-4 h-4 text-gray-800" />
+                </div>
+            </div>
+            <MenuItems class="hidden lg:flex">
+                <ul
+                    class="flex flex-col lg:flex-row gap-1 lg:gap-5 text-white uppercase text-xs font-medium"
+                >
+                    <li
+                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 p-3"
+                    >
+                        <a href="">Reservas</a>
+                    </li>
+                    <li
+                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 p-3"
+                    >
+                        <a href="">Flota</a>
+                    </li>
+                    <li
+                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 p-3"
+                    >
+                        <a href="">Promociones</a>
+                    </li>
+                    <li
+                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 p-3"
+                    >
+                        <a href="">Conozca el Perú</a>
+                    </li>
+                    <li
+                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 p-3"
+                    >
+                        <a href="">¿Quienes somos?</a>
+                    </li>
+                    <li
+                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 p-3"
+                    >
+                        <a href="">Contáctenos</a>
+                    </li>
+                    <li
+                        class="bg-white rounded-3xl text-black font-medium text-sm p-3 flex items-center"
+                    >
+                        <Icon name="mdi:phone" class="w-5" /> +51 959608721 / +51
+                        959639873
+                    </li>
+                </ul>
+                <ul class="flex items-center gap-x-2 mr-2">
+                    <li>
+                        <a href="">
+                            <Icon
+                                name="ion:social-facebook"
+                                class="w-5 text-yellow-500"
+                            />
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href=""
+                            ><Icon
+                                name="ion:logo-instagram"
+                                class="w-5 text-yellow-500"
+                            /></a
+                        >
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            ><Icon
+                                name="ion:logo-youtube"
+                                class="w-5 text-yellow-500"
+                            /></a
+                        >
+                    </li>
+                </ul>
+            </MenuItems>
+        </Astronav>
+    </div>
+</header>
