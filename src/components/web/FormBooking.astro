@@ -1,0 +1,198 @@
+
+<script>
+    document.getElementById("start-date").onchange = function() {calculateDifference()};
+    document.getElementById("end-date").onchange = function() {calculateDifference()};
+
+    function calculateDifference() {
+        // Obtener los valores de los inputs HTML
+        var startDate = document.getElementById("start-date").value;
+        var endDate = document.getElementById("end-date").value;
+
+        // Convertir los valores a objetos Date
+        startDate = new Date(startDate);
+        endDate = new Date(endDate);
+
+        // Calcular la diferencia entre las fechas
+        var diff = diffInDays(startDate, endDate);
+
+        // Mostrar el resultado en una etiqueta HTML
+        document.getElementById("inpCantidadD").value = diff;
+    }
+
+    function diffInDays(startDate, endDate) {
+        // Obtener el número de milisegundos transcurridos entre las dos fechas
+        var diff = endDate.getTime() - startDate.getTime();
+
+        // Dividir el número de milisegundos por el número de milisegundos en un día
+        // y redondear el resultado hacia abajo
+        return Math.floor(diff / 86400000);
+    }
+</script>
+
+<div class="rounded-lg bg-white w-5/12">
+    <ul class="flex justify-around bg-yellow-400 rounded-t-lg">
+        <li class="p-2 bg-white flex-1 text-center rounded-tl-lg">
+            <button class="nav-link active" type="button">Reservar</button>
+        </li>
+        <li class="p-2 flex-1 text-center">
+            <button class="nav-link" type="button">Ver</button>
+        </li>
+        <li class="p-2 flex-1 text-center">
+            <button class="nav-link" type="button">Modificar</button>
+        </li>
+        <li class="p-2 flex-1 text-center">
+            <button class="nav-link" type="button">Cancelar</button>
+        </li>
+    </ul>
+    <div class="p-5">
+        <form action="" method="post" class="">
+            <div class="flex items-center">
+                <div class="border border-gray-300 p-2">
+                    <img src="/images/salida.png" alt="go" class="w-5" />
+                </div>
+                <select class="form-select rounded-sm w-full" name="" id="">
+                    <option value="">Elige la ciudad</option>
+                </select>
+            </div>
+            <p class="font-semibold my-2">Fecha de Reserva y Hora</p>
+            <div class="flex justify-around items-center">
+                <input
+                    type="date"
+                    name="inpFechaR"
+                    autocomplete="off"
+                    class="form-input w-full"
+                    id="start-date"
+                />
+                <span class="px-1">-</span>
+                <select
+                    class="form-select w-full"
+                    name="inpHoraR"
+                    id="inpHoraR"
+                    required
+                >
+                    <option value="">Hrs.</option>
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                </select>
+                <span class="px-1">-</span>
+                <select
+                    class="form-select w-full"
+                    name="inpHoraR"
+                    id="inpHoraR"
+                    required
+                >
+                    <option value="">Min.</option>
+                    <option value="00">00</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                </select>
+            </div>
+            <p class="font-semibold my-2">Fecha de Devolución y Hora</p>
+            <div class="flex justify-around items-center">
+                <input
+                    type="date"
+                    name="inpFechaR"
+                    autocomplete="off"
+                    class="form-input w-full"
+                    id="end-date"
+                    onchange="calculateDifference()"
+                />
+                <span class="px-1">-</span>
+                <select
+                    class="form-select w-full"
+                    name="inpHoraR"
+                    id="inpHoraR"
+                    required
+                >
+                    <option value="">Hrs.</option>
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                </select>
+                <span class="px-1">-</span>
+                <select
+                    class="form-select w-full"
+                    name="inpHoraR"
+                    id="inpHoraR"
+                    required
+                >
+                    <option value="">Min.</option>
+                    <option value="00">00</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                </select>
+            </div>
+            <div class="flex items-center mt-3">
+                <div class="border border-gray-300 p-2">
+                    <img src="/images/regreso.png" alt="go" class="w-5" />
+                </div>
+                <select class="form-select rounded-sm w-full" name="" id="">
+                    <option value="">Elige la ciudad</option>
+                </select>
+            </div>
+            <div class="flex mt-3">
+                <div class="flex flex-col w-full">
+                    <label class="font-semibold mb-2">Tipo de auto</label>
+                    <select
+                        class="form-select"
+                        name="inpAuto"
+                        required
+                    >
+                        <option value="">- Todos -</option>
+                        <option value="1">Economico</option>
+                        <option value="2">Compacto</option>
+                        <option value="3">Intermedio</option>
+                        <option value="4">Mini Van</option>
+                        <option value="5">Standard</option>
+                        <option value="6">Full Size</option>
+                        <option value="7">Premium</option>
+                        <option value="8">Luxury</option>
+                        <option value="9">Especial</option>
+                        <option value="10">Van</option>
+                    </select>
+                </div>
+                <div class="flex flex-col w-full">
+                    <label class="font-semibold mb-2">Cantidad de días</label>
+                    <input
+                        type="text"
+                        name="inpCantidadD"
+                        id="inpCantidadD"
+                        class="form-input"
+                        readonly
+                    />
+                </div>
+            </div>
+            <div class="flex items-center mt-3">
+                <div class="border border-gray-300 p-2">
+                    <img src="/images/chofer.png" alt="chofer" class="w-5" />
+                </div>
+                <select
+                    class="form-select w-full"
+                    name="slcChofer"
+                >
+                    <option value="1">Sin Chofer</option>
+                    <option value="0">Con Chofer</option>
+                    <option value="2">Chofer Bilingüe</option>
+                </select>
+            </div>
+            <div class="flex flex-row-reverse mt-3">
+                <button
+                    type="button"
+                    name="btnContinuar"
+                    class="bg-black px-4 py-3 text-white rounded-md">Continuar</button
+                >
+            </div>
+        </form>
+    </div>
+</div>

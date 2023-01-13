@@ -1,3 +1,9 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
+footer{
+    background-image: url('/images/bg-footer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
