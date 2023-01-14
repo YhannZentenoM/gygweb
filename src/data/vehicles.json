@@ -1,0 +1,24 @@
+[
+    {
+        "name":"Hyundai Accent 2022 Sedan or Similar",
+        "maleteras":4,
+        "pasajeros":5,
+        "caja":"Automático",
+        "aire":"Aire Acondicionado",
+        "precio":65,
+        "imagen":"hyundai-accent.png",
+        "detalles":"detalle13.png",
+        "dolar":3.85
+    },
+    {
+        "name":"Hyundai Tucson 2023 SUV or Similiar",
+        "maleteras":5,
+        "pasajeros":5,
+        "caja":"Manual",
+        "aire":"Aire Acondicionado",
+        "precio":90,
+        "imagen":"hyundai-tucson-2.png",
+        "detalles":"detalle15.png",
+        "dolar":3.85
+    }
+]

@@ -1,0 +1,13 @@
+---
+interface Props{
+    title: string;
+    subtitle: string;
+}
+
+const {title} = Astro.props
+const {subtitle} = Astro.props
+---
+<div class="relative flex justify-start uppercase">
+    <img class="absolute top-0 left-0" src="/images/img-titulo.png" width="90" height="90">
+    <h1 class="text-3xl z-20 pl-16 pt-2">{title}<br><span class="font-bold">{subtitle}</span></h1>
+</div>

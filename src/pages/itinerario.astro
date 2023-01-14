@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/web/Navbar.astro";
+import Footer from "../components/web/Footer.astro";
+import HeaderTitle from "../components/general/HeaderTitle.astro";
+import CheckBoxLabel from "../components/general/CheckBoxLabel.astro";
+import aditionals from "../data/aditional.json";
+import DataBooking from "../components/general/DataBooking.astro";
+import vehicles from "../data/vehicles.json";
+import VehicleBooking from "../components/general/VehicleBooking.astro";
+---
+
+<script>
+    if (localStorage.getItem("formData")) {
+        var formObject = JSON.parse(localStorage.getItem("formData"));
+        document.getElementById("it-ciurec").innerHTML = formObject.inpCiudadR;
+        document.getElementById("it-ferec").innerHTML = formObject.inpFechaR;
+        document.getElementById("it-hrec").innerHTML =
+            formObject.inpHoraR + ":" + formObject.inpMinR;
+        document.getElementById("it-ciudev").innerHTML = formObject.inpCiudadD;
+        document.getElementById("it-fedev").innerHTML = formObject.inpFechaD;
+        document.getElementById("it-hdev").innerHTML =
+            formObject.inpHoraD + ":" + formObject.inpMinD;
+        document.getElementById("it-chofer").innerHTML = formObject.inpChofer;
+    } else {
+        window.location.href = "/";
+    }
+</script>
+
+<Layout title="Itinerario">
+    <Navbar />
+    <section class="bg-white pt-20">
+        <div class="container mx-auto">
+            <HeaderTitle title="Tú" subtitle="Itinerario" />
+            <div class="flex flex-wrap justify-center py-10">
+                {
+                    aditionals.map((aditional) => (
+                        <CheckBoxLabel
+                            identi={`${aditional.identi}`}
+                            price={aditional.price}
+                            text={`${aditional.text}`}
+                            dolar={aditional.dolar}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+    <section class="bg-white pb-10">
+        <div class="container mx-auto px-20">
+            <h2 class="uppercase text-3xl font-semibold">Datos reserva</h2>
+            <div class="flex flex-wrap mt-3">
+                <DataBooking title="Ciudad Recojo" data="it-ciurec" />
+                <DataBooking title="Fecha Recojo" data="it-ferec" />
+                <DataBooking title="Hora Recojo" data="it-hrec" />
+                <DataBooking title="Ciudad Devolución" data="it-ciudev" />
+                <DataBooking title="Fecha Devolución" data="it-fedev" />
+                <DataBooking title="Hora Devolución" data="it-hdev" />
+                <DataBooking title="Chofer" data="it-chofer" />
+            </div>
+        </div>
+    </section>
+    <section class="bg-white pb-10">
+        <div class="container mx-auto">
+            {
+                vehicles.map((vehicle) => (
+                    <VehicleBooking
+                        name={`${vehicle.name}`}
+                        pasajeros={`${vehicle.pasajeros}`}
+                        maleteras={`${vehicle.maleteras}`}
+                        caja={`${vehicle.caja}`}
+                        aire={`${vehicle.aire}`}
+                        image={`${vehicle.imagen}`}
+                        precio={vehicle.precio}
+                        dolar={vehicle.dolar}
+                    />
+                ))
+            }
+        </div>
+    </section>
+    <Footer />
+</Layout>

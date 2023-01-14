@@ -1,0 +1,50 @@
+[
+    {
+        "identi": "checkbox1",
+        "price": 9.44,
+        "text": "Colisión y robo total (LDW) $ 9.44 por día, incluye IGV ó S/",
+        "dolar": 3.85
+    },
+    {
+        "identi": "checkbox2",
+        "price": 5.95,
+        "text": "Accidentes personales (PAI) $ 5.95 por día, incluye IGV ó S/",
+        "dolar": 3.85
+    },
+    {
+        "identi": "checkbox3",
+        "price": 5.95,
+        "text": "Chofer adicional $ 5.95 por día, incluye IGV ó S/",
+        "dolar": 3.85
+    },
+    {
+        "identi": "checkbox4",
+        "price": 3.57,
+        "text": "Seguro de vidrios (SCRV) $ 3.57 por día, incluye IGV ó S/",
+        "dolar": 3.85
+    },
+    {
+        "identi": "checkbox5",
+        "price": 29.75,
+        "text": "Servicio de chofer + Viáticos / 10 hrs (Dentro de la Ciudad) $ 29.75 por día, incluye IGV ó S/",
+        "dolar": 3.85
+    },
+    {
+        "identi": "checkbox6",
+        "price": 8.33,
+        "text": "Responsabilidad civil (LIS) $ 8.33 por día, incluye IGV ó S/",
+        "dolar": 3.85
+    },
+    {
+        "identi": "checkbox7",
+        "price": 5.95,
+        "text": "Silla bebé $ 5.95 por día, incluye IGV ó S/",
+        "dolar": 3.85
+    },
+    {
+        "identi": "checkbox8",
+        "price": 41.65,
+        "text": "Servicio de chofer + Viáticos / 10 hrs (Fuera de la Ciudad) $ 41.65 por día, incluye IGV ó S/",
+        "dolar": 3.85
+    }
+]

@@ -1,0 +1,20 @@
+---
+interface Props{
+    identi: string;
+    price: number;
+    text: string;
+    dolar: number;
+}
+
+const {identi} = Astro.props
+const {price} = Astro.props
+const {text} = Astro.props
+const {dolar} = Astro.props
+let soles = (price * dolar).toFixed(2)
+---
+<div class="w-1/3">
+    <div class="flex items-start p-2">
+        <input class="form-checkbox rounded mt-1" type="checkbox" value={`${price}`} id={`${identi}`}>
+        <label class="ml-2 text-sm" for={`${identi}`}>{text} {soles}</label>
+    </div>
+</div>
