@@ -1,22 +1,22 @@
 <script>
     if (localStorage.getItem("formData")) {
-        let dolar = parseFloat(localStorage.getItem("dolar"));
-        let adi = parseFloat(localStorage.getItem("totalAditional"));
-        var formObject = JSON.parse(localStorage.getItem("formData"));
-        let dias = formObject.inpCantidadD;
-        let price = parseFloat(localStorage.getItem("priceVehicle")) * dias;
-        let chofer = priceChofer(formObject.inpChofer) * dias;
+        let dolar = parseFloat(localStorage.getItem("dolar"))
+        let adi = parseFloat(localStorage.getItem("totalAditional"))
+        var formObject = JSON.parse(localStorage.getItem("formData"))
+        let dias = formObject.inpCantidadD
+        let price = parseFloat(localStorage.getItem("priceVehicle")) * dias
+        let chofer = priceChofer(formObject.inpChofer) * dias
         let aero = parseFloat(localStorage.getItem("aeropuerto"))
         let dropoff = parseFloat(localStorage.getItem("dropoff"))
-        document.getElementById("cd").innerHTML = dias;
-        document.getElementById("cr").innerHTML = formObject.inpCiudadR;
-        document.getElementById("fr").innerHTML = formObject.inpFechaR;
+        document.getElementById("cd").innerHTML = dias
+        document.getElementById("cr").innerHTML = formObject.inpCiudadR
+        document.getElementById("fr").innerHTML = formObject.inpFechaR
         document.getElementById("hr").innerHTML =
-            formObject.inpHoraR + ":" + formObject.inpMinR;
-        document.getElementById("dv").innerHTML = price.toFixed(2);
-        document.getElementById("sv").innerHTML = (price * dolar).toFixed(2);
+            formObject.inpHoraR + ":" + formObject.inpMinR
+        document.getElementById("dv").innerHTML = price.toFixed(2)
+        document.getElementById("sv").innerHTML = (price * dolar).toFixed(2)
         document.getElementById("iv").src =
-            "/images/" + localStorage.getItem("imageVehicle");
+            "/images/" + localStorage.getItem("imageVehicle")
         document.getElementById("ad").innerHTML = adi.toFixed(2)
         document.getElementById("as").innerHTML = (adi * dolar).toFixed(2)
         document.getElementById("igvs").innerHTML = calculateIgv(price * dolar)
@@ -30,7 +30,7 @@
         document.getElementById("tod").innerHTML = calculateTotal(price,dropoff,chofer,aero,adi)
         document.getElementById("tos").innerHTML = ((calculateTotal(price,dropoff,chofer,aero,adi))*dolar).toFixed(2)
     } else {
-        window.location.href = "/";
+        window.location.href = "/"
     }
 
     function calculateTotal(veh,drop,chof,aero,add){

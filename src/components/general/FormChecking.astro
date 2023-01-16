@@ -1,8 +1,27 @@
+<script>
+    document.getElementById("btn-confirm-checking").onclick = function () {
+        saveLocalStorageFormChecking();
+    };
+
+    function saveLocalStorageFormChecking() {
+        var form = document.getElementById("frm-booking-checking");
+        var formData = new FormData(form);
+
+        var formObject = {};
+        formData.forEach(function (value, key) {
+            formObject[key] = value;
+        });
+
+        localStorage.setItem("formChecking", JSON.stringify(formObject));
+        window.location.href = "/confirmation";
+        // console.log(JSON.parse(localStorage.getItem("formChecking")))
+    }
+</script>
 <div class="bg-yellow-400 w-7/12 p-10">
-    <form action="">
+    <form action="" id="frm-booking-checking">
         <div class="flex items-center">
             <div class="border border-gray-400 p-2 bg-white">
-                <img src="/images/salida.png" alt="go" class="w-5" />
+                <img src="/images/user.png" alt="go" class="w-5" />
             </div>
             <input
                 type="text"
@@ -28,7 +47,7 @@
         />
         <div class="flex items-center mt-3">
             <div class="border border-gray-400 p-2 bg-white">
-                <img src="/images/salida.png" alt="go" class="w-5" />
+                <img src="/images/mail.png" alt="go" class="w-5" />
             </div>
             <input
                 type="text"
@@ -60,7 +79,7 @@
             class="form-textarea w-full"></textarea>
         <div class="flex items-center mt-3">
             <div class="border border-gray-400 p-2 bg-white">
-                <img src="/images/salida.png" alt="go" class="w-5" />
+                <img src="/images/user.png" alt="go" class="w-5" />
             </div>
             <input
                 type="text"
@@ -72,7 +91,7 @@
         </div>
         <div class="flex items-center mt-3">
             <div class="border border-gray-400 p-2 bg-white">
-                <img src="/images/salida.png" alt="go" class="w-5" />
+                <img src="/images/doc.png" alt="go" class="w-5" />
             </div>
             <select class="form-select w-full" name="documento" required>
                 <option value="">Tipo de documento</option>

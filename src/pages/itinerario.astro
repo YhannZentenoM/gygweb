@@ -30,19 +30,23 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
                 localStorage.setItem("aeropuerto", drop.aeropuerto.toFixed(2))
             }
         })
+        window.location.href = "/checking";
     } else {
         window.location.href = "/";
     }
     
-    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    let total = 0;
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]')
+    let total = 0
+    let abrev = ""
     Array.from(checkboxes).forEach(function(checkbox) {
         checkbox.addEventListener("change", function () {
-            let value = parseFloat(this.value);
+            let value = parseFloat(this.value)
+            let abreviado = this.getAttribute("data-abr")
             if (this.checked) {
-                total += value;
+                total += value
+                abrev += abreviado+","
             } else {
-                total -= value;
+                total -= value
             }
         });
     });
@@ -73,6 +77,7 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
                             price={aditional.price}
                             text={`${aditional.text}`}
                             dolar={aditional.dolar}
+                            abreviatura={aditional.abreviatura}
                         />
                     ))
                 }

@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/web/Navbar.astro";
+import Footer from "../components/web/Footer.astro";
+---
+<Layout title="Confirmación">
+    <Navbar />
+    <section class="py-20 bg-white">
+        <div class="container mx-auto">
+            <div class="flex justify-center">
+                <div class="font-semibold w-9/12 p-10">
+                    <p class="py-5">Su hoja de reservación ha sido procesada con exito, y enviada a su correo. Nosotros le enviaremos un correo indicándole la disponibilidad del vehículo.</p>
+                    <p class="py-5">*Su reserva esta sujeta a confirmación de disponibilidad de vehículo seleccionado, puede comunicarse por correo electrónico o via telefónica para confirmar disponibilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <Footer />
+</Layout>
