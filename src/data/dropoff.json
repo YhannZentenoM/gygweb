@@ -1,0 +1,14 @@
+[
+    {
+        "origen": "AREQUIPA",
+        "destino": "CUSCO",
+        "precio": 280,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "CUSCO - AEROPUERTO",
+        "precio": 280,
+        "aeropuerto": 5
+    }
+]

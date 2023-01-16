@@ -11,26 +11,59 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
 ---
 
 <script>
+    import dropoff from "../data/dropoff.json";
     if (localStorage.getItem("formData")) {
         var formObject = JSON.parse(localStorage.getItem("formData"));
-        document.getElementById("it-ciurec").innerHTML = formObject.inpCiudadR;
-        document.getElementById("it-ferec").innerHTML = formObject.inpFechaR;
+        document.getElementById("it-ciurec").innerHTML = formObject.inpCiudadR
+        document.getElementById("it-ferec").innerHTML = formObject.inpFechaR
         document.getElementById("it-hrec").innerHTML =
-            formObject.inpHoraR + ":" + formObject.inpMinR;
-        document.getElementById("it-ciudev").innerHTML = formObject.inpCiudadD;
-        document.getElementById("it-fedev").innerHTML = formObject.inpFechaD;
+            formObject.inpHoraR + ":" + formObject.inpMinR
+        document.getElementById("it-ciudev").innerHTML = formObject.inpCiudadD
+        document.getElementById("it-fedev").innerHTML = formObject.inpFechaD
         document.getElementById("it-hdev").innerHTML =
-            formObject.inpHoraD + ":" + formObject.inpMinD;
-        document.getElementById("it-chofer").innerHTML = formObject.inpChofer;
+            formObject.inpHoraD + ":" + formObject.inpMinD
+        document.getElementById("it-chofer").innerHTML = formObject.inpChofer
+
+        dropoff.map(drop => {
+            if(drop.origen == formObject.inpCiudadR && drop.destino == formObject.inpCiudadD){
+                localStorage.setItem("dropoff", drop.precio.toFixed(2))
+                localStorage.setItem("aeropuerto", drop.aeropuerto.toFixed(2))
+            }
+        })
     } else {
         window.location.href = "/";
     }
+    
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let total = 0;
+    Array.from(checkboxes).forEach(function(checkbox) {
+        checkbox.addEventListener("change", function () {
+            let value = parseFloat(this.value);
+            if (this.checked) {
+                total += value;
+            } else {
+                total -= value;
+            }
+        });
+    });
+    
+    let buttons = document.getElementsByClassName("btn-booking");
+    Array.from(buttons).forEach(function(button) {
+        button.addEventListener("click", function(){
+            localStorage.setItem("imageVehicle", this.getAttribute("data-image"))
+            localStorage.setItem("priceVehicle", this.getAttribute("data-price"))
+            localStorage.setItem("dolar", this.getAttribute("data-dolar"))
+            localStorage.setItem("auto", this.getAttribute("data-name"))
+            localStorage.setItem("totalAditional", total)
+        });
+    });
+
 </script>
 
 <Layout title="Itinerario">
     <Navbar />
     <section class="bg-white pt-20">
-        <div class="container mx-auto">
+        <div class="container mx-auto px-20">
             <HeaderTitle title="Tú" subtitle="Itinerario" />
             <div class="flex flex-wrap justify-center py-10">
                 {

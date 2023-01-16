@@ -1,27 +1,28 @@
 ---
-interface Props{
-    name:string;
-    maleteras:string;
-    pasajeros:string;
-    caja:string;
-    aire:string;
-    image:string;
-    precio:number;
-    dolar:number;
+interface Props {
+    name: string;
+    maleteras: string;
+    pasajeros: string;
+    caja: string;
+    aire: string;
+    image: string;
+    precio: number;
+    dolar: number;
 }
-const {name} = Astro.props
-const {maleteras} = Astro.props
-const {pasajeros} = Astro.props
-const {caja} = Astro.props
-const {aire} = Astro.props
-const {precio} = Astro.props
-const {dolar} = Astro.props
-const {image} = Astro.props
-let soles = (precio * dolar).toFixed(2)
+const { name } = Astro.props;
+const { maleteras } = Astro.props;
+const { pasajeros } = Astro.props;
+const { caja } = Astro.props;
+const { aire } = Astro.props;
+const { precio } = Astro.props;
+const { dolar } = Astro.props;
+const { image } = Astro.props;
+let soles = (precio * dolar).toFixed(2);
 ---
+
 <div class="flex items-center justify-center w-full md:w-11/12 mx-auto py-10">
     <div class="p-5 flex-1">
-        <img src={`/images/${image}`} alt="auto" class="w-4/5 mx-auto">
+        <img src={`/images/${image}`} alt="auto" class="w-4/5 mx-auto" />
     </div>
     <div class="flex flex-col p-5 flex-1">
         <h4 class="font-semibold text-base md:text-xl">{name}</h4>
@@ -35,6 +36,14 @@ let soles = (precio * dolar).toFixed(2)
     <div class="flex flex-col font-semibold p-5 flex-1">
         <p>S/ {soles}</p>
         <p>$ {precio.toFixed(2)}</p>
-        <button type="button" class="uppercase px-12 py-3 mt-3 bg-yellow-400 w-1/2">Reservar</button>
+        <button
+            type="button"
+            class="btn-booking uppercase px-12 py-3 mt-3 bg-yellow-400 w-1/2"
+            data-image={`${image}`}
+            data-price={`${precio}`}
+            data-dolar={`${dolar}`}
+            data-name={`${name}`}
+            >Reservar</button
+        >
     </div>
 </div>

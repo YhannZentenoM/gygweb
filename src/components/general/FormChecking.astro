@@ -1,0 +1,99 @@
+<div class="bg-yellow-400 w-7/12 p-10">
+    <form action="">
+        <div class="flex items-center">
+            <div class="border border-gray-400 p-2 bg-white">
+                <img src="/images/salida.png" alt="go" class="w-5" />
+            </div>
+            <input
+                type="text"
+                name="user"
+                autocomplete="off"
+                class="form-input w-full"
+                placeholder="Nombres y Apellidos"
+            />
+        </div>
+        <p class="font-semibold my-2">Dirección</p>
+        <input
+            type="text"
+            name="address"
+            autocomplete="off"
+            class="form-input w-full"
+        />
+        <p class="font-semibold my-2">Teléfono</p>
+        <input
+            type="text"
+            name="phone"
+            autocomplete="off"
+            class="form-input w-full"
+        />
+        <div class="flex items-center mt-3">
+            <div class="border border-gray-400 p-2 bg-white">
+                <img src="/images/salida.png" alt="go" class="w-5" />
+            </div>
+            <input
+                type="text"
+                name="mail"
+                autocomplete="off"
+                class="form-input w-full"
+                placeholder="Email"
+            />
+        </div>
+        <p class="font-semibold my-2">Linea aérea</p>
+        <input
+            type="text"
+            name="aerea"
+            autocomplete="off"
+            class="form-input w-full"
+        />
+        <p class="font-semibold my-2">Número de vuelo</p>
+        <input
+            type="text"
+            name="vuelo"
+            autocomplete="off"
+            class="form-input w-full"
+        />
+        <p class="font-semibold my-2">Información adicional</p>
+        <textarea
+            rows="2"
+            name="info"
+            autocomplete="off"
+            class="form-textarea w-full"></textarea>
+        <div class="flex items-center mt-3">
+            <div class="border border-gray-400 p-2 bg-white">
+                <img src="/images/salida.png" alt="go" class="w-5" />
+            </div>
+            <input
+                type="text"
+                name="empresa"
+                autocomplete="off"
+                class="form-input w-full"
+                placeholder="Nombre de la empresa"
+            />
+        </div>
+        <div class="flex items-center mt-3">
+            <div class="border border-gray-400 p-2 bg-white">
+                <img src="/images/salida.png" alt="go" class="w-5" />
+            </div>
+            <select class="form-select w-full" name="documento" required>
+                <option value="">Tipo de documento</option>
+                <option value="DNI">DNI</option>
+                <option value="RUC">RUC</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </div>
+        <p class="font-semibold my-2">Número de documento</p>
+        <input
+            type="text"
+            name="numdoc"
+            autocomplete="off"
+            class="form-input w-full"
+        />
+        <div class="flex flex-row-reverse mt-3">
+            <button
+                type="button"
+                class="bg-black px-4 py-3 text-white rounded-md"
+                id="btn-confirm-checking">Confirmar reserva</button
+            >
+        </div>
+    </form>
+</div>
