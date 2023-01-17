@@ -7,3 +7,9 @@ footer{
     background-size: cover;
     background-position: center;
 }
+.banner{
+	background-image: url("/images/Fotos-01.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}

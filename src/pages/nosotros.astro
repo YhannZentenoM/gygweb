@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/web/Navbar.astro";
+import Footer from "../components/web/Footer.astro";
+import FormMessage from "../components/web/FormMessage.astro";
+---
+
+<Layout title="Quienes somos">
+    <Navbar />
+    <section class="h-screen banner banner flex items-center">
+        <div class="container mx-auto">
+            <h2 class="text-white uppercase font-light">
+                GYG Alquiler de Automoviles, <span class="font-bold"
+                    >are you!</span>
+            </h2>
+            <h2
+                class="text-white font-bold uppercase mt-12 mb-14 text-xl md:text-6xl"
+            >
+                El Destino<br />Que Quieras, Cuando Tú<br />Quieras
+            </h2>
+            <a
+                href="#cards-somos"
+                class="border-2 border-yellow-400 text-yellow-400 p-4 uppercase flex w-56 gap-x-1 items-center"
+                >¿Quiénes Somos? <img
+                    src="/images/chevron-down-solid.svg"
+                    alt="down"
+                    width="15"
+                /></a
+            >
+        </div>
+    </section>
+    <section class="py-20" id="cards-somos">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap justify-center gap-5">
+                <div class="card__who max-w-xs py-16 px-6 relative bg-white">
+                    <img
+                        src="/images/mision.png"
+                        alt="mision"
+                        class="absolute left-0 top-0 w-16"
+                    />
+                    <h2 class="uppercase font-bold text-2xl mb-4">Misión</h2>
+                    <div class="w-24 border-2 border-black mb-4"></div>
+                    <p class="mb-1.5">
+                        Somos una empresa rentadora de autos con más de 45 años
+                        en el mercado Arequipeño.
+                    </p>
+                    <p>
+                        Vendiendo experiencias a través del alquiler de un
+                        vehículo.
+                    </p>
+                    <p>
+                        Conectando nuestra comunidad con otras motivando a
+                        descubrir.
+                    </p>
+                </div>
+                <div class="card__who max-w-xs py-16 px-6 relative bg-yellow-400">
+                    <img
+                        src="/images/vision.png"
+                        alt="vision"
+                        class="absolute left-0 top-0 w-16"
+                    />
+                    <h2 class="uppercase font-bold text-2xl mb-4">Visión</h2>
+                    <div class="w-24 border-2 border-black mb-4"></div>
+                    <p class="mb-1.5">
+                        Ser la rentadora de vehículos más grande del sur del
+                        Perú.
+                    </p>
+                    <p>Dándole confort y calidad a su recorrido.</p>
+                </div>
+                <div class="card__who max-w-xs py-16 px-6 relative bg-white">
+                    <img
+                        src="/images/servicios.png"
+                        alt="servicios"
+                        class="absolute left-0 top-0 w-16"
+                    />
+                    <h2 class="uppercase font-bold text-2xl mb-4">Servicios</h2>
+                    <div class="w-24 border-2 border-black mb-4"></div>
+                    <p class="mb-1.5">Servicios en el Aeropuerto.</p>
+                    <p class="mb-1.5">Entrega a Domicilio.</p>
+                    <p class="mb-1.5">Servicio entre ciudades.</p>
+                    <p class="mb-1.5">Servicio de chofer.</p>
+                    <p class="mb-1.5">Atención las 24 hrs los 365 dias.</p>
+                    <p class="mb-1.5">Vehículo de reemplazo.</p>
+                    <p class="mb-1.5">Camionetas con equipamiento Minero.</p>
+                    <p class="mb-1.5">Silla de bebé.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <FormMessage />
+    <Footer />
+</Layout>

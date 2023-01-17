@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/web/Navbar.astro";
+import Footer from "../components/web/Footer.astro";
+import FormMessage from "../components/web/FormMessage.astro";
+---
+
+<script>
+    let maps = document.getElementsByClassName("map");
+    Array.from(maps).forEach(function(map) {
+        map.addEventListener("click", function(){
+            selectMap(this.getAttribute("data-map"))
+        });
+    });
+
+    function selectMap(mapUrl) {
+        var frame = document.getElementById('mapa');
+        frame.src = mapUrl;
+    }
+</script> 
+
+<Layout title="Contáctanos">
+    <Navbar />
+    <section class="py-20 section__contact flex items-center justify-center">
+        <div class="container mx-auto flex items-center">
+            <div class="p-5 w-4/12 text-white">
+				<h1 class="text-yellow-400 text-2xl font-bold">Contacto</h1>
+				<h2 class="text-white text-xl uppercase font-medium">GYG Alquiler de Automoviles Arequipa <span class="text-yellow-400 text-base font-semibold cursor-pointer lowercase map" data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.4823011311355!2d-71.54004318513716!3d-16.400313788677085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a59c224b1cf%3A0xc1dafdbf29722b3a!2sG%26G+Alquiler+de+Autom%C3%B3viles!5e0!3m2!1ses!2spe!4v1556135278135!5m2!1ses!2spe">Ver Mapa</span></h2>
+                <p class="text-white uppercase font-semibold text-xs">(Atención 24 hrs. en celulares)</p>
+				<p class="my-2">Palacio Viejo 214 - Arequipa</p>
+                <p>(054) 212123 - 282519</p>
+                <p>+51 959639873 (Gonzalo)</p>
+                <p>+51 959923511 (Alfredo)</p>
+                <p>+51 959608721 (Reina) (Atención en Inglés)</p>
+                <p>+51 959667773 (Vidal)</p>
+                <p class="mt-2">reservas@gygrentacar.com</p>
+                <p class="mb-4">arequipa@gygrentacar.com</p>
+				<h2 class="text-white text-xl uppercase font-medium">GYG Alquiler de Automoviles Cusco <span class="text-yellow-400 text-base font-semibold cursor-pointer lowercase map" data-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d342.85385120083293!2d-71.94569489435084!3d-13.538748903356746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916e7ff06ed7ddb7%3A0xd16c3cb84810de1!2sAv.%20Velasco%20Astete%20y%20Jr.%20Qui%C3%B1ones!5e0!3m2!1ses!2spe!4v1672155969058!5m2!1ses!2spe">Ver Mapa</span></h2>
+                <p class="text-white uppercase font-semibold text-xs">(Atención 24 hrs. en celulares)</p>
+				<p class="mb-2">Av. Velasco Astete E-5 al costado del Aeropuerto</p>
+                <p>+51 959639873 (Gonzalo)</p>
+                <p>+51 959923511 (Alfredo)</p>
+                <p>+51 959608721 (Reina) (Atención en Inglés)</p>
+				<p class="mt-2">reservas@gygrentacar.com</p>
+			</div>
+            <div class="bg-zinc-800 p-5 w-3/12">
+                <h2 class="text-white text-base text-center">Completa el Formulario</h2>
+				<form action="" method="post">
+                    <div class="flex items-center mt-3">
+                        <div class="border border-gray-300 p-2 bg-white">
+                            <img src="/images/user.png" alt="go" class="w-5" />
+                        </div>
+                        <input type="text" class="form-input w-full" name="nuevoNombreContacto" placeholder="Coloca tu nombre">
+                    </div>
+                    <div class="flex items-center mt-3">
+                        <div class="border border-gray-300 p-2 bg-white">
+                            <img src="/images/mail.png" alt="go" class="w-5" />
+                        </div>
+                        <input type="text" class="form-input w-full" name="nuevoEmailContacto" placeholder="Correo Electrónico">
+                    </div>
+					<div class="mt-3">
+						<textarea class="form-textarea w-full" rows="6" placeholder="Escriba aquí su mensaje" name="nuevoMensajeContacto"></textarea>
+					</div>
+					<button class="w-full bg-yellow-400 uppercase text-black mt-3 py-3 font-semibold" name="btnEnviarMensajeContacto" type="submit">Enviar</button>
+				</form>
+            </div>
+            <div class="p-5 w-5/12">
+                <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.4823011311355!2d-71.54004318513716!3d-16.400313788677085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a59c224b1cf%3A0xc1dafdbf29722b3a!2sG%26G+Alquiler+de+Autom%C3%B3viles!5e0!3m2!1ses!2spe!4v1556135278135!5m2!1ses!2spe" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <FormMessage />
+    <Footer />
+</Layout>
