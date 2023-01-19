@@ -13,3 +13,9 @@ footer{
 	background-size: cover;
 	background-position: center;
 }
+.bg-section{
+    background-image: url('/images/Fotos-02.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+}

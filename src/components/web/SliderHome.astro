@@ -1,3 +1,32 @@
+<script type="module">
+    import { tns } from "./node_modules/tiny-slider/src/tiny-slider"
+    var slider = tns({
+        container: ".slider-home",
+        items: 1,
+        slideBy: "page",
+        autoplay: true,
+        controls: false,
+        nav: false,
+        autoplayHoverPause: true,
+        autoplayButtonOutput: false,
+    });
+</script>
 <div class="w-7/12">
-    <img src="/images/5-100.jpg" alt="Slider" class="w-full">
+    <div class="slider-home">
+        <div>
+            <img src="/images/sliders/1.png" alt="Slider" class="w-full">
+        </div>
+        <div>
+            <img src="/images/sliders/2.png" alt="Slider" class="w-full">
+        </div>
+        <div>
+            <img src="/images/sliders/3.png" alt="Slider" class="w-full">
+        </div>
+        <div>
+            <img src="/images/sliders/4.png" alt="Slider" class="w-full">
+        </div>
+        <div>
+            <img src="/images/sliders/5.png" alt="Slider" class="w-full">
+        </div>
+    </div>
 </div>
