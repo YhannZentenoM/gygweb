@@ -1,7 +1,45 @@
 <script>
     document.getElementById("btn-confirm-checking").onclick = function () {
-        saveLocalStorageFormChecking();
+        var inputs = document.getElementsByClassName("input-checking");
+        var regex = document.getElementsByClassName("input-regex");
+        if (validateInputs(inputs, regex)) {
+            saveLocalStorageFormChecking();
+            sendEmailConfirmation()
+        }
     };
+
+    function sendEmailConfirmation() {
+        fetch("https://api.sendgrid.com/v3/mail/send", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer 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"
+            },
+            body: JSON.stringify({
+                from: {
+                    email: "reservas@gygrentacar.com",
+                },
+                personalizations: [
+                    {
+                        to: [
+                            {
+                                email: "pool.zm@gmail.com",
+                            },
+                        ],
+                    },
+                ],
+                subject: "Bienvenido a la nueva web",
+                content: [
+                    {
+                        type: "text/plain",
+                        value: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur est quas laboriosam distinctio doloremque voluptatem qui corporis tempore, odio, sunt in quo non dolorem quidem itaque esse minus exercitationem maxime.",
+                    },
+                ],
+            }),
+        })
+        .then((res) => res.json())
+        .catch((error) => console.error(error));
+    }
 
     function saveLocalStorageFormChecking() {
         var form = document.getElementById("frm-booking-checking");
@@ -13,8 +51,35 @@
         });
 
         localStorage.setItem("formChecking", JSON.stringify(formObject));
-        window.location.href = "/confirmation";
+        // window.location.href = "/confirmation";
         // console.log(JSON.parse(localStorage.getItem("formChecking")))
+    }
+    function validateInputs(inputs, regex) {
+        var sqlRegex = /^(SELECT|UPDATE|INSERT)/i;
+        for (var i = 0; i < inputs.length; i++) {
+            if (
+                sqlRegex.test(inputs[i].value) ||
+                inputs[i].value.trim() === ""
+            ) {
+                alert(
+                    "Error: entrada no válida en el campo " +
+                        inputs[i].name +
+                        ". Es un valor inválido o vacío."
+                );
+                return false;
+            }
+        }
+        for (var i = 0; i < regex.length; i++) {
+            if (sqlRegex.test(regex[i].value)) {
+                alert(
+                    "Error: entrada no válida en el campo " +
+                        regex[i].name +
+                        ". Es un valor inválido."
+                );
+                return false;
+            }
+        }
+        return true;
     }
 </script>
 <div class="bg-yellow-400 w-7/12 p-10">
@@ -27,7 +92,7 @@
                 type="text"
                 name="user"
                 autocomplete="off"
-                class="form-input w-full"
+                class="form-input w-full input-checking"
                 placeholder="Nombres y Apellidos"
             />
         </div>
@@ -36,7 +101,7 @@
             type="text"
             name="address"
             autocomplete="off"
-            class="form-input w-full"
+            class="form-input w-full input-checking"
         />
         <p class="font-semibold my-2">Teléfono</p>
         <input
@@ -53,7 +118,7 @@
                 type="text"
                 name="mail"
                 autocomplete="off"
-                class="form-input w-full"
+                class="form-input w-full input-checking"
                 placeholder="Email"
             />
         </div>
@@ -62,21 +127,21 @@
             type="text"
             name="aerea"
             autocomplete="off"
-            class="form-input w-full"
+            class="form-input w-full input-regex"
         />
         <p class="font-semibold my-2">Número de vuelo</p>
         <input
             type="text"
             name="vuelo"
             autocomplete="off"
-            class="form-input w-full"
+            class="form-input w-full input-regex"
         />
         <p class="font-semibold my-2">Información adicional</p>
         <textarea
             rows="2"
             name="info"
             autocomplete="off"
-            class="form-textarea w-full"></textarea>
+            class="form-textarea w-full input-regex"></textarea>
         <div class="flex items-center mt-3">
             <div class="border border-gray-400 p-2 bg-white">
                 <img src="/images/user.png" alt="go" class="w-5" />
@@ -85,7 +150,7 @@
                 type="text"
                 name="empresa"
                 autocomplete="off"
-                class="form-input w-full"
+                class="form-input w-full input-checking"
                 placeholder="Nombre de la empresa"
             />
         </div>
@@ -93,7 +158,11 @@
             <div class="border border-gray-400 p-2 bg-white">
                 <img src="/images/doc.png" alt="go" class="w-5" />
             </div>
-            <select class="form-select w-full" name="documento" required>
+            <select
+                class="form-select w-full input-checking"
+                name="documento"
+                required
+            >
                 <option value="">Tipo de documento</option>
                 <option value="DNI">DNI</option>
                 <option value="RUC">RUC</option>
@@ -105,7 +174,7 @@
             type="text"
             name="numdoc"
             autocomplete="off"
-            class="form-input w-full"
+            class="form-input w-full input-checking"
         />
         <div class="flex flex-row-reverse mt-3">
             <button

@@ -10,5 +10,125 @@
         "destino": "CUSCO - AEROPUERTO",
         "precio": 280,
         "aeropuerto": 5
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "CUSCO",
+        "precio": 280,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "TACNA",
+        "precio": 180,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "JULIACA",
+        "precio": 180,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "PUNO",
+        "precio": 200,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "LIMA",
+        "precio": 480,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "LIMA",
+        "precio": 480,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "CHICLAYO",
+        "precio": 750,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "PIURA",
+        "precio": 900,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "AREQUIPA",
+        "precio": 0,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "CUSCO - AEROPUERTO",
+        "precio": 280,
+        "aeropuerto": 17
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "AREQUIPA - AEROPUERTO",
+        "precio": 0,
+        "aeropuerto": 24
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "LIMA",
+        "precio": 600,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA",
+        "destino": "VALLE SAGRADO",
+        "precio": 335,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "VALLE SAGRADO",
+        "precio": 335,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "VALLE SAGRADO",
+        "precio": 55,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "CUSCO - AEROPUERTO",
+        "destino": "VALLE SAGRADO",
+        "precio": 55,
+        "aeropuerto": 5
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "CUSCO",
+        "precio": 0,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "AREQUIPA",
+        "precio": 280,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "JULIACA",
+        "precio": 200,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "PUNO",
+        "precio": 220,
+        "aeropuerto": 0
     }
 ]

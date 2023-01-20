@@ -6,8 +6,30 @@
         calculateDifference();
     };
     document.getElementById("btn-confirm-booking").onclick = function () {
-        saveLocalStorageFormHome();
+        var inputs = document.getElementsByClassName("input-home");
+        if (validateInputs(inputs)) {
+            saveLocalStorageFormHome();
+        }
     };
+
+    function validateInputs(inputs) {
+        // Define la expresión regular para buscar comandos SQL
+        var sqlRegex = /^(SELECT|UPDATE|INSERT)/i;
+        // Recorre cada campo de entrada
+        for (var i = 0; i < inputs.length; i++) {
+            // Comprueba si el valor del campo de entrada coincide con la expresión regular
+            if (sqlRegex.test(inputs[i].value) || inputs[i].value.trim() === "") {
+                // Si coincide, muestra un mensaje de error y detiene la ejecución de la función
+                alert(
+                    "Error: entrada no válida en el campo " +
+                        inputs[i].name +
+                        ". Es un valor inválido o vacío."
+                );
+                return false;
+            }
+        }
+        return true;
+    }
 
     function saveLocalStorageFormHome() {
         var form = document.getElementById("frm-booking-home");
@@ -49,7 +71,7 @@
     }
 </script>
 
-<div class="rounded-lg bg-white w-5/12">
+<div class="rounded-lg bg-white w-4/12">
     <ul class="flex justify-around bg-yellow-400 rounded-t-lg">
         <li class="p-2 bg-white flex-1 text-center rounded-tl-lg">
             <button class="nav-link active" type="button">Reservar</button>
@@ -71,18 +93,19 @@
                     <img src="/images/salida.png" alt="go" class="w-5" />
                 </div>
                 <select
-                    class="form-select rounded-sm w-full"
+                    class="form-select rounded-sm w-full input-home"
                     name="inpCiudadR"
                     id=""
                 >
                     <option value="">Elige la ciudad</option>
                     <option value="AREQUIPA">AREQUIPA</option>
-                    <option value="AREQUIPA - AEROPUERTO">AREQUIPA - AEROPUERTO</option>
-                    <option value="CHICLAYO">CHICLAYO</option>
+                    <option value="AREQUIPA - AEROPUERTO"
+                        >AREQUIPA - AEROPUERTO</option
+                    >
                     <option value="CUSCO">CUSCO</option>
-                    <option value="CUSCO - AEROPUERTO">CUSCO - AEROPUERTO</option>
-                    <option value="LIMA">LIMA</option>
-                    <option value="PIURA">PIURA</option>
+                    <option value="CUSCO - AEROPUERTO"
+                        >CUSCO - AEROPUERTO</option
+                    >
                 </select>
             </div>
             <p class="font-semibold my-2">Fecha de Reserva y Hora</p>
@@ -91,12 +114,12 @@
                     type="date"
                     name="inpFechaR"
                     autocomplete="off"
-                    class="form-input w-full"
+                    class="form-input w-full input-home"
                     id="start-date"
                 />
                 <span class="px-1">-</span>
                 <select
-                    class="form-select w-full"
+                    class="form-select w-full input-home"
                     name="inpHoraR"
                     id="inpHoraR"
                     required
@@ -112,7 +135,7 @@
                 </select>
                 <span class="px-1">-</span>
                 <select
-                    class="form-select w-full"
+                    class="form-select w-full input-home"
                     name="inpMinR"
                     id="inpMinR"
                     required
@@ -130,13 +153,13 @@
                     type="date"
                     name="inpFechaD"
                     autocomplete="off"
-                    class="form-input w-full"
+                    class="form-input w-full input-home"
                     id="end-date"
                     onchange="calculateDifference()"
                 />
                 <span class="px-1">-</span>
                 <select
-                    class="form-select w-full"
+                    class="form-select w-full input-home"
                     name="inpHoraD"
                     id="inpHoraD"
                     required
@@ -152,7 +175,7 @@
                 </select>
                 <span class="px-1">-</span>
                 <select
-                    class="form-select w-full"
+                    class="form-select w-full input-home"
                     name="inpMinD"
                     id="inpMinD"
                     required
@@ -169,24 +192,35 @@
                     <img src="/images/regreso.png" alt="go" class="w-5" />
                 </div>
                 <select
-                    class="form-select rounded-sm w-full"
+                    class="form-select rounded-sm w-full input-home"
                     name="inpCiudadD"
                     id=""
                 >
                     <option value="">Elige la ciudad</option>
                     <option value="AREQUIPA">AREQUIPA</option>
-                    <option value="AREQUIPA - AEROPUERTO">AREQUIPA - AEROPUERTO</option>
+                    <option value="AREQUIPA - AEROPUERTO"
+                        >AREQUIPA - AEROPUERTO</option
+                    >
                     <option value="CHICLAYO">CHICLAYO</option>
                     <option value="CUSCO">CUSCO</option>
-                    <option value="CUSCO - AEROPUERTO">CUSCO - AEROPUERTO</option>
+                    <option value="CUSCO - AEROPUERTO"
+                        >CUSCO - AEROPUERTO</option
+                    >
                     <option value="LIMA">LIMA</option>
                     <option value="PIURA">PIURA</option>
+                    <option value="PUNO">PUNO</option>
+                    <option value="TACNA">TACNA</option>
+                    <option value="VALLE SAGRADO">VALLE SAGRADO</option>
                 </select>
             </div>
             <div class="flex mt-3">
                 <div class="flex flex-col w-full">
                     <label class="font-semibold mb-2">Tipo de auto</label>
-                    <select class="form-select" name="inpAuto" required>
+                    <select
+                        class="form-select input-home"
+                        name="inpAuto"
+                        required
+                    >
                         <option value="">- Todos -</option>
                         <option value="1">Economico</option>
                         <option value="2">Compacto</option>
@@ -206,7 +240,7 @@
                         type="text"
                         name="inpCantidadD"
                         id="inpCantidadD"
-                        class="form-input"
+                        class="form-input input-home"
                         readonly
                     />
                 </div>
@@ -215,7 +249,7 @@
                 <div class="border border-gray-300 p-2">
                     <img src="/images/chofer.png" alt="chofer" class="w-5" />
                 </div>
-                <select class="form-select w-full" name="inpChofer">
+                <select class="form-select w-full input-home" name="inpChofer">
                     <option value="No">Sin Chofer</option>
                     <option value="Si">Con Chofer</option>
                     <option value="Bilingüe">Chofer Bilingüe</option>

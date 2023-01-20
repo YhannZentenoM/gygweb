@@ -30,14 +30,13 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
                 localStorage.setItem("aeropuerto", drop.aeropuerto.toFixed(2))
             }
         })
-        window.location.href = "/checking";
     } else {
         window.location.href = "/";
     }
     
     let checkboxes = document.querySelectorAll('input[type="checkbox"]')
     let total = 0
-    let abrev = ""
+    var abrev = ""
     Array.from(checkboxes).forEach(function(checkbox) {
         checkbox.addEventListener("change", function () {
             let value = parseFloat(this.value)
@@ -59,6 +58,8 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
             localStorage.setItem("dolar", this.getAttribute("data-dolar"))
             localStorage.setItem("auto", this.getAttribute("data-name"))
             localStorage.setItem("totalAditional", total)
+            localStorage.setItem("addAbrev", abrev)
+            window.location.href = "/checking";
         });
     });
 
