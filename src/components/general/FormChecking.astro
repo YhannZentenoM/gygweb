@@ -4,41 +4,55 @@
         var regex = document.getElementsByClassName("input-regex");
         if (validateInputs(inputs, regex)) {
             saveLocalStorageFormChecking();
-            sendEmailConfirmation()
+            sendEmailConfirmation();
         }
     };
 
     function sendEmailConfirmation() {
-        fetch("https://api.sendgrid.com/v3/mail/send", {
+        var formObjectCheck = JSON.parse(localStorage.getItem("formChecking"));
+        var formObject = JSON.parse(localStorage.getItem("formData"));
+
+        fetch("https://www.gygrentacar.com/emailconfirmation/sendMail.php", {
             method: "POST",
+            body: JSON.stringify({
+                email: formObjectCheck.mail,
+                nameuser: formObjectCheck.user,
+                address: formObjectCheck.address,
+                phone: formObjectCheck.phone,
+                aerea: formObjectCheck.aerea,
+                vuelo: formObjectCheck.vuelo,
+                info: formObjectCheck.info,
+                empresa: formObjectCheck.empresa,
+                documento: formObjectCheck.documento,
+                numdoc: formObjectCheck.numdoc,
+                citygo: formObject.inpCiudadR,
+                datego: formObject.inpFechaR,
+                timego: formObject.inpHoraR + ":" + formObject.inpMinR,
+                cityback: formObject.inpCiudadD,
+                dateback: formObject.inpFechaD,
+                timeback: formObject.inpHoraD + ":" + formObject.inpMinD,
+                days: formObject.inpCantidadD,
+                auto: localStorage.getItem("auto"),
+                chofer: localStorage.getItem("priceChofer"),
+                dropp: localStorage.getItem("dropoff"),
+                aeropuerto: localStorage.getItem("aeropuerto"),
+                dolar: localStorage.getItem("dolar"),
+                priceauto: localStorage.getItem("priceVehicle"),
+                total: localStorage.getItem("total"),
+                abreviado: localStorage.getItem("addAbrev"),
+                adicional: localStorage.getItem("totalAditional"),
+            }),
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer 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"
             },
-            body: JSON.stringify({
-                from: {
-                    email: "reservas@gygrentacar.com",
-                },
-                personalizations: [
-                    {
-                        to: [
-                            {
-                                email: "pool.zm@gmail.com",
-                            },
-                        ],
-                    },
-                ],
-                subject: "Bienvenido a la nueva web",
-                content: [
-                    {
-                        type: "text/plain",
-                        value: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur est quas laboriosam distinctio doloremque voluptatem qui corporis tempore, odio, sunt in quo non dolorem quidem itaque esse minus exercitationem maxime.",
-                    },
-                ],
-            }),
         })
-        .then((res) => res.json())
-        .catch((error) => console.error(error));
+            .then((response) => response.text())
+            .then((data) => {
+                console.log(data);//agregar el borrado de localstorage y redireccion a pagina de confirmacion
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     }
 
     function saveLocalStorageFormChecking() {
@@ -52,7 +66,6 @@
 
         localStorage.setItem("formChecking", JSON.stringify(formObject));
         // window.location.href = "/confirmation";
-        // console.log(JSON.parse(localStorage.getItem("formChecking")))
     }
     function validateInputs(inputs, regex) {
         var sqlRegex = /^(SELECT|UPDATE|INSERT)/i;
@@ -115,7 +128,7 @@
                 <img src="/images/mail.png" alt="go" class="w-5" />
             </div>
             <input
-                type="text"
+                type="email"
                 name="mail"
                 autocomplete="off"
                 class="form-input w-full input-checking"

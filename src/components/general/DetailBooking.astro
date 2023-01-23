@@ -16,7 +16,7 @@
         document.getElementById("dv").innerHTML = price.toFixed(2)
         document.getElementById("sv").innerHTML = (price * dolar).toFixed(2)
         document.getElementById("iv").src =
-            "/images/" + localStorage.getItem("imageVehicle")
+            "/images/autos/" + localStorage.getItem("imageVehicle")
         document.getElementById("ad").innerHTML = adi.toFixed(2)
         document.getElementById("as").innerHTML = (adi * dolar).toFixed(2)
         document.getElementById("igvs").innerHTML = calculateIgv(price * dolar)
@@ -35,6 +35,7 @@
 
     function calculateTotal(veh,drop,chof,aero,add){
         let total = veh + drop  + chof + aero + add
+        localStorage.setItem("total", total)
         return total
     }
 
@@ -46,12 +47,15 @@
     function priceChofer(type) {
         switch (type) {
             case "Si":
+                localStorage.setItem("priceChofer", "30")
                 return 30
                 break;
             case "No":
+                localStorage.setItem("priceChofer", "0")
                 return 0
                 break;
             case "Bilingüe":
+                localStorage.setItem("priceChofer", "50")
                 return 50
                 break;
         }
