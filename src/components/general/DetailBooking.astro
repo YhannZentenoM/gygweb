@@ -1,42 +1,50 @@
 <script>
     if (localStorage.getItem("formData")) {
-        let dolar = parseFloat(localStorage.getItem("dolar"))
-        let adi = parseFloat(localStorage.getItem("totalAditional"))
-        var formObject = JSON.parse(localStorage.getItem("formData"))
-        let dias = formObject.inpCantidadD
-        let price = parseFloat(localStorage.getItem("priceVehicle")) * dias
-        let chofer = priceChofer(formObject.inpChofer) * dias
-        let aero = parseFloat(localStorage.getItem("aeropuerto"))
-        let dropoff = parseFloat(localStorage.getItem("dropoff"))
-        document.getElementById("cd").innerHTML = dias
-        document.getElementById("cr").innerHTML = formObject.inpCiudadR
-        document.getElementById("fr").innerHTML = formObject.inpFechaR
+        let dolar = parseFloat(localStorage.getItem("dolar"));
+        let adi = parseFloat(localStorage.getItem("totalAditional"));
+        var formObject = JSON.parse(localStorage.getItem("formData"));
+        let dias = formObject.inpCantidadD;
+        let price = parseFloat(localStorage.getItem("priceVehicle")) * dias;
+        let chofer = priceChofer(formObject.inpChofer) * dias;
+        let aero = parseFloat(localStorage.getItem("aeropuerto"));
+        let dropoff = parseFloat(localStorage.getItem("dropoff"));
+        document.getElementById("cd").innerHTML = dias;
+        document.getElementById("cr").innerHTML = formObject.inpCiudadR;
+        document.getElementById("fr").innerHTML = formObject.inpFechaR;
         document.getElementById("hr").innerHTML =
-            formObject.inpHoraR + ":" + formObject.inpMinR
-        document.getElementById("dv").innerHTML = price.toFixed(2)
-        document.getElementById("sv").innerHTML = (price * dolar).toFixed(2)
+            formObject.inpHoraR + ":" + formObject.inpMinR;
+        document.getElementById("dv").innerHTML = price.toFixed(2);
+        document.getElementById("sv").innerHTML = (price * dolar).toFixed(2);
         document.getElementById("iv").src =
-            "/images/autos/" + localStorage.getItem("imageVehicle")
-        document.getElementById("ad").innerHTML = adi.toFixed(2)
-        document.getElementById("as").innerHTML = (adi * dolar).toFixed(2)
-        document.getElementById("igvs").innerHTML = calculateIgv(price * dolar)
-        document.getElementById("igvd").innerHTML = calculateIgv(price)
-        document.getElementById("chd").innerHTML = chofer.toFixed(2)
-        document.getElementById("chs").innerHTML = (chofer*dolar).toFixed(2)
-        document.getElementById("aed").innerHTML = aero.toFixed(2)
-        document.getElementById("aes").innerHTML = (aero*dolar).toFixed(2)
-        document.getElementById("dpd").innerHTML = dropoff.toFixed(2)
-        document.getElementById("dps").innerHTML = (dropoff*dolar).toFixed(2)
-        document.getElementById("tod").innerHTML = calculateTotal(price,dropoff,chofer,aero,adi)
-        document.getElementById("tos").innerHTML = ((calculateTotal(price,dropoff,chofer,aero,adi))*dolar).toFixed(2)
+            "/images/autos/" + localStorage.getItem("imageVehicle");
+        document.getElementById("ad").innerHTML = adi.toFixed(2);
+        document.getElementById("as").innerHTML = (adi * dolar).toFixed(2);
+        document.getElementById("igvs").innerHTML = calculateIgv(price * dolar);
+        document.getElementById("igvd").innerHTML = calculateIgv(price);
+        document.getElementById("chd").innerHTML = chofer.toFixed(2);
+        document.getElementById("chs").innerHTML = (chofer * dolar).toFixed(2);
+        document.getElementById("aed").innerHTML = aero.toFixed(2);
+        document.getElementById("aes").innerHTML = (aero * dolar).toFixed(2);
+        document.getElementById("dpd").innerHTML = dropoff.toFixed(2);
+        document.getElementById("dps").innerHTML = (dropoff * dolar).toFixed(2);
+        document.getElementById("tod").innerHTML = calculateTotal(
+            price,
+            dropoff,
+            chofer,
+            aero,
+            adi
+        );
+        document.getElementById("tos").innerHTML = (
+            calculateTotal(price, dropoff, chofer, aero, adi) * dolar
+        ).toFixed(2);
     } else {
-        window.location.href = "/"
+        window.location.href = "/";
     }
 
-    function calculateTotal(veh,drop,chof,aero,add){
-        let total = veh + drop  + chof + aero + add
-        localStorage.setItem("total", total)
-        return total
+    function calculateTotal(veh, drop, chof, aero, add) {
+        let total = veh + drop + chof + aero + add;
+        localStorage.setItem("total", total);
+        return total;
     }
 
     function calculateIgv(mount) {
@@ -47,16 +55,16 @@
     function priceChofer(type) {
         switch (type) {
             case "Si":
-                localStorage.setItem("priceChofer", "30")
-                return 30
+                localStorage.setItem("priceChofer", "30");
+                return 30;
                 break;
             case "No":
-                localStorage.setItem("priceChofer", "0")
-                return 0
+                localStorage.setItem("priceChofer", "0");
+                return 0;
                 break;
             case "Bilingüe":
-                localStorage.setItem("priceChofer", "50")
-                return 50
+                localStorage.setItem("priceChofer", "50");
+                return 50;
                 break;
         }
     }
@@ -96,5 +104,7 @@
         <p class="w-1/3 font-semibold">TOTAL</p>
         <p class="w-1/3 font-semibold">S/ <span id="tos"></span></p>
         <p class="w-1/3 font-semibold">$ <span id="tod"></span></p>
+        <br /><br />
+        <p class="w-3/3 italic">Tipo de cambio es referencial</p>
     </div>
 </div>

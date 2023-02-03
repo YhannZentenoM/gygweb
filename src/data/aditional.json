@@ -30,7 +30,7 @@
     {
         "identi": "checkbox5",
         "price": 29.75,
-        "text": "Servicio de chofer + Viáticos / 10 hrs (Dentro de la Ciudad) $ 29.75 por día, incluye IGV ó S/",
+        "text": "Servicio de chofer / 10 hrs (Dentro de la Ciudad) $ 29.75 por día, incluye IGV ó S/",
         "dolar": 3.85,
         "abreviatura": "CHDC"
     },
@@ -51,7 +51,7 @@
     {
         "identi": "checkbox8",
         "price": 41.65,
-        "text": "Servicio de chofer + Viáticos / 10 hrs (Fuera de la Ciudad) $ 41.65 por día, incluye IGV ó S/",
+        "text": "Servicio de chofer / 10 hrs (Fuera de la Ciudad) $ 41.65 por día, incluye IGV ó S/",
         "dolar": 3.85,
         "abreviatura": "CHFC"
     }

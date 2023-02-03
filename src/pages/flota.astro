@@ -8,8 +8,8 @@ import vehicles from "../data/vehicles.json";
 import SliderVehicle from "../components/general/SliderVehicle.astro";
 ---
 
-<script type="module">
-    import { tns } from "./node_modules/tiny-slider/src/tiny-slider"
+<script>
+    import { tns } from "tiny-slider"
     var slider = tns({
         container: ".my-slider",
         items: 1,

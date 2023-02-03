@@ -14,55 +14,72 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
     import dropoff from "../data/dropoff.json";
     if (localStorage.getItem("formData")) {
         var formObject = JSON.parse(localStorage.getItem("formData"));
-        document.getElementById("it-ciurec").innerHTML = formObject.inpCiudadR
-        document.getElementById("it-ferec").innerHTML = formObject.inpFechaR
+        document.getElementById("it-ciurec").innerHTML = formObject.inpCiudadR;
+        document.getElementById("it-ferec").innerHTML = formObject.inpFechaR;
         document.getElementById("it-hrec").innerHTML =
-            formObject.inpHoraR + ":" + formObject.inpMinR
-        document.getElementById("it-ciudev").innerHTML = formObject.inpCiudadD
-        document.getElementById("it-fedev").innerHTML = formObject.inpFechaD
+            formObject.inpHoraR + ":" + formObject.inpMinR;
+        document.getElementById("it-ciudev").innerHTML = formObject.inpCiudadD;
+        document.getElementById("it-fedev").innerHTML = formObject.inpFechaD;
         document.getElementById("it-hdev").innerHTML =
-            formObject.inpHoraD + ":" + formObject.inpMinD
-        document.getElementById("it-chofer").innerHTML = formObject.inpChofer
+            formObject.inpHoraD + ":" + formObject.inpMinD;
+        document.getElementById("it-chofer").innerHTML = formObject.inpChofer;
 
-        dropoff.map(drop => {
-            if(drop.origen == formObject.inpCiudadR && drop.destino == formObject.inpCiudadD){
-                localStorage.setItem("dropoff", drop.precio.toFixed(2))
-                localStorage.setItem("aeropuerto", drop.aeropuerto.toFixed(2))
+        dropoff.map((drop) => {
+            if (
+                drop.origen == formObject.inpCiudadR &&
+                drop.destino == formObject.inpCiudadD
+            ) {
+                localStorage.setItem("dropoff", drop.precio.toFixed(2));
+                localStorage.setItem("aeropuerto", drop.aeropuerto.toFixed(2));
             }
-        })
+        });
     } else {
         window.location.href = "/";
     }
-    
-    let checkboxes = document.querySelectorAll('input[type="checkbox"]')
-    let total = 0
-    var abrev = ""
-    Array.from(checkboxes).forEach(function(checkbox) {
+
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let total = 0;
+    var abrev = "";
+    Array.from(checkboxes).forEach(function (checkbox) {
         checkbox.addEventListener("change", function () {
-            let value = parseFloat(this.value)
-            let abreviado = this.getAttribute("data-abr")
+            let value = parseFloat(this.value);
+            let abreviado = this.getAttribute("data-abr");
             if (this.checked) {
-                total += value
-                abrev += abreviado+","
+                total += value;
+                abrev += abreviado + ",";
             } else {
-                total -= value
+                total -= value;
             }
         });
     });
-    
+
     let buttons = document.getElementsByClassName("btn-booking");
-    Array.from(buttons).forEach(function(button) {
-        button.addEventListener("click", function(){
-            localStorage.setItem("imageVehicle", this.getAttribute("data-image"))
-            localStorage.setItem("priceVehicle", this.getAttribute("data-price"))
-            localStorage.setItem("dolar", this.getAttribute("data-dolar"))
-            localStorage.setItem("auto", this.getAttribute("data-name"))
-            localStorage.setItem("totalAditional", total)
-            localStorage.setItem("addAbrev", abrev)
+    Array.from(buttons).forEach(function (button) {
+        button.addEventListener("click", function () {
+            localStorage.setItem(
+                "imageVehicle",
+                this.getAttribute("data-image")
+            );
+            localStorage.setItem(
+                "priceVehicle",
+                this.getAttribute("data-price")
+            );
+            // localStorage.setItem("dolar", this.getAttribute("data-dolar"));
+            localStorage.setItem("auto", this.getAttribute("data-name"));
+            localStorage.setItem("totalAditional", total);
+            localStorage.setItem("addAbrev", abrev);
             window.location.href = "/checking";
         });
     });
+</script>
 
+<script>
+    let vehicles = document.getElementsByClassName('price-soles-veh');
+    Array.from(vehicles).forEach(function (vehicle) {
+        let price = parseFloat(vehicle.parentElement.nextElementSibling.lastChild.lastChild.textContent)
+        let soles = price * parseFloat(localStorage.getItem("dolar"));
+        vehicle.innerHTML = soles.toFixed(2) 
+    });
 </script>
 
 <Layout title="Itinerario">
@@ -77,7 +94,7 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
                             identi={`${aditional.identi}`}
                             price={aditional.price}
                             text={`${aditional.text}`}
-                            dolar={aditional.dolar}
+                            // dolar={aditional.dolar}
                             abreviatura={aditional.abreviatura}
                         />
                     ))
@@ -111,7 +128,7 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
                         aire={`${vehicle.aire}`}
                         image={`${vehicle.imagen}`}
                         precio={vehicle.precio}
-                        dolar={vehicle.dolar}
+                        // dolar={vehicle.dolar}
                     />
                 ))
             }
