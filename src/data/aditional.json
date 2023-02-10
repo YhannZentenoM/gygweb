@@ -1,58 +1,44 @@
 [
     {
         "identi": "checkbox1",
-        "price": 9.44,
-        "text": "Colisión y robo total (LDW) $ 9.44 por día, incluye IGV ó S/",
+        "price": 10,
+        "text": "Colisión y robo total (LDW) $ 10.00 por día, incluye IGV ó S/",
         "dolar": 3.85,
-        "abreviatura": "LDW"
+        "abreviatura": "Colisión y robo total (LDW)"
     },
     {
         "identi": "checkbox2",
         "price": 5.95,
         "text": "Accidentes personales (PAI) $ 5.95 por día, incluye IGV ó S/",
         "dolar": 3.85,
-        "abreviatura": "PAI"
+        "abreviatura": "Accidentes personales (PAI)"
     },
     {
         "identi": "checkbox3",
         "price": 5.95,
-        "text": "Chofer adicional $ 5.95 por día, incluye IGV ó S/",
+        "text": "Conductor adicional $ 5.95 por día, incluye IGV ó S/",
         "dolar": 3.85,
-        "abreviatura": "CHAD"
-    },
-    {
-        "identi": "checkbox4",
-        "price": 3.57,
-        "text": "Seguro de vidrios (SCRV) $ 3.57 por día, incluye IGV ó S/",
-        "dolar": 3.85,
-        "abreviatura": "SCRV"
+        "abreviatura": "Conductor adicional"
     },
     {
         "identi": "checkbox5",
-        "price": 29.75,
-        "text": "Servicio de chofer / 10 hrs (Dentro de la Ciudad) $ 29.75 por día, incluye IGV ó S/",
+        "price": 35,
+        "text": "Servicio de chofer / 10 hrs (Dentro de la Ciudad) $ 35.00 por día, incluye IGV ó S/",
         "dolar": 3.85,
-        "abreviatura": "CHDC"
+        "abreviatura": "Servicio de chofer / 10 hrs (Dentro de la Ciudad)"
     },
     {
         "identi": "checkbox6",
         "price": 8.33,
         "text": "Responsabilidad civil (LIS) $ 8.33 por día, incluye IGV ó S/",
         "dolar": 3.85,
-        "abreviatura": "LIS"
+        "abreviatura": "Responsabilidad civil"
     },
     {
         "identi": "checkbox7",
         "price": 5.95,
         "text": "Silla bebé $ 5.95 por día, incluye IGV ó S/",
         "dolar": 3.85,
-        "abreviatura": "SBB"
-    },
-    {
-        "identi": "checkbox8",
-        "price": 41.65,
-        "text": "Servicio de chofer / 10 hrs (Fuera de la Ciudad) $ 41.65 por día, incluye IGV ó S/",
-        "dolar": 3.85,
-        "abreviatura": "CHFC"
+        "abreviatura": "Silla bebé"
     }
 ]

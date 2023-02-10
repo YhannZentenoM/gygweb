@@ -7,17 +7,9 @@ interface Props {
     aire: string;
     image: string;
     precio: number;
-    // dolar: number;
 }
-const { name } = Astro.props;
-const { maleteras } = Astro.props;
-const { pasajeros } = Astro.props;
-const { caja } = Astro.props;
-const { aire } = Astro.props;
-const { precio } = Astro.props;
-// const { dolar } = Astro.props;
-const { image } = Astro.props;
-// let soles = (precio * dolar).toFixed(2);
+const { name, maleteras, pasajeros, caja, aire, precio, image } = Astro.props;
+let preciosigv = (precio / 1.18).toFixed(2);
 ---
 
 <div class="flex items-center justify-center w-full md:w-11/12 mx-auto py-10 vehicle-booking">
@@ -35,12 +27,12 @@ const { image } = Astro.props;
     </div>
     <div class="flex flex-col font-semibold p-5 flex-1">
         <p>S/ <span class="price-soles-veh"></span></p>
-        <p>$ <span>{precio.toFixed(2)}</span></p>
+        <p>$ <span>{preciosigv}</span></p>
         <button
             type="button"
             class="btn-booking uppercase px-12 py-3 mt-3 bg-yellow-400 w-1/2"
             data-image={`${image}`}
-            data-price={`${precio}`}
+            data-price={`${preciosigv}`}
             data-name={`${name}`}
             >Reservar</button
         >

@@ -5,10 +5,8 @@ interface Props {
     detail: string;
     price: string;
 }
-const { name } = Astro.props;
-const { image } = Astro.props;
-const { detail } = Astro.props;
-const { price } = Astro.props;
+const { name, image, detail, price } = Astro.props;
+let pricesigv = (+price / 1.18).toFixed(2);
 ---
 
 <li class="border-8 border-white p-4 relative h-full">
@@ -26,7 +24,7 @@ const { price } = Astro.props;
             </div>
         </a>
         <div class="bg-yellow-400 w-full h-16 flex items-center justify-center absolute bottom-0">
-            <p class="text-2xl uppercase text-center font-bold">$ {price} dólares</p>
+            <p class="text-2xl uppercase text-center font-bold">$ {pricesigv} dólares</p>
         </div>
     </div>
 </li>

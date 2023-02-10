@@ -3,8 +3,8 @@
         let dolar = parseFloat(localStorage.getItem("dolar"));
         let adi = parseFloat(localStorage.getItem("totalAditional"));
         var formObject = JSON.parse(localStorage.getItem("formData"));
-        let dias = formObject.inpCantidadD;
-        let price = parseFloat(localStorage.getItem("priceVehicle")) * dias;
+        let dias = +formObject.inpCantidadD >= 7 ? +formObject.inpCantidadD - 1 : formObject.inpCantidadD;
+        let price = +localStorage.getItem("priceVehicle") * dias;
         let chofer = priceChofer(formObject.inpChofer) * dias;
         let aero = parseFloat(localStorage.getItem("aeropuerto"));
         let dropoff = parseFloat(localStorage.getItem("dropoff"));
@@ -37,6 +37,13 @@
         document.getElementById("tos").innerHTML = (
             calculateTotal(price, dropoff, chofer, aero, adi) * dolar
         ).toFixed(2);
+        let arrAdd = localStorage.getItem("addAbrev").split(",")
+        let html = ""
+        for (var i=0; i < arrAdd.length; i++) {
+            html += "<li>"+ arrAdd[i] + "</li>";
+        }
+        console.log(html)
+        document.getElementById("adl").innerHTML = html
     } else {
         window.location.href = "/";
     }
@@ -48,8 +55,8 @@
     }
 
     function calculateIgv(mount) {
-        let sigv = mount / 1.18;
-        return (sigv * 0.18).toFixed(2);
+        let sigv = mount * 0.18;
+        return sigv.toFixed(2);
     }
 
     function priceChofer(type) {
@@ -101,6 +108,7 @@
         <p class="w-1/3 font-medium">Adicionales:</p>
         <p class="w-1/3">S/ <span id="as"></span></p>
         <p class="w-1/3">$ <span id="ad"></span></p>
+        <ul class="w-full text-sm" id="adl"></ul>
         <p class="w-1/3 font-semibold">TOTAL</p>
         <p class="w-1/3 font-semibold">S/ <span id="tos"></span></p>
         <p class="w-1/3 font-semibold">$ <span id="tod"></span></p>
