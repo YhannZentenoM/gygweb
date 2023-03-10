@@ -14,6 +14,18 @@
     document.getElementById("end-date").onchange = function () {
         calculateDifference();
     };
+    document.getElementById("inpHoraD").onchange = function () {
+        calculateDifference();
+    };
+    document.getElementById("inpHoraR").onchange = function () {
+        calculateDifference();
+    };
+    document.getElementById("inpMinD").onchange = function () {
+        calculateDifference();
+    };
+    document.getElementById("inpMinR").onchange = function () {
+        calculateDifference();
+    };
     document.getElementById("btn-confirm-booking").onclick = function () {
         var inputs = document.getElementsByClassName("input-home");
         if (validateInputs(inputs)) {
@@ -72,13 +84,16 @@
         // Obtener los valores de los inputs HTML
         var startDate = document.getElementById("start-date").value;
         var endDate = document.getElementById("end-date").value;
+        var startHour = document.getElementById("inpHoraR").value + ":" + document.getElementById("inpMinR").value + ":00";
+        var endHour = document.getElementById("inpHoraD").value + ":" + document.getElementById("inpMinD").value + ":00";
 
         // Convertir los valores a objetos Date
-        startDate = new Date(startDate);
-        endDate = new Date(endDate);
-
-        // Calcular la diferencia entre las fechas
+        startDate = new Date(startDate+" "+startHour);
+        endDate = new Date(endDate+" "+endHour);
+        
         var diff = diffInDays(startDate, endDate);
+        // Calcular la diferencia entre las fechas
+
 
         // Mostrar el resultado en una etiqueta HTML
         document.getElementById("inpCantidadD").value = diff;
@@ -90,7 +105,9 @@
 
         // Dividir el número de milisegundos por el número de milisegundos en un día
         // y redondear el resultado hacia abajo
-        return Math.floor(diff / 86400000);
+        const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        return diffDays
+        // return Math.floor(diff / 86400000);
     }
 </script>
 
@@ -139,6 +156,7 @@
                     autocomplete="off"
                     class="form-input w-full input-home basis-1/2"
                     id="start-date"
+                    required
                 />
                 <span class="px-1">-</span>
                 <select
@@ -195,7 +213,7 @@
                     autocomplete="off"
                     class="form-input w-full input-home basis-1/2"
                     id="end-date"
-                    onchange="calculateDifference()"
+                    required
                 />
                 <span class="px-1">-</span>
                 <select

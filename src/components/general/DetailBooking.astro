@@ -8,6 +8,7 @@
         let chofer = priceChofer(formObject.inpChofer) * dias;
         let aero = parseFloat(localStorage.getItem("aeropuerto"));
         let dropoff = parseFloat(localStorage.getItem("dropoff"));
+        let igv = Number(calculateIgv(price))
         document.getElementById("cd").innerHTML = dias;
         document.getElementById("cr").innerHTML = formObject.inpCiudadR;
         document.getElementById("fr").innerHTML = formObject.inpFechaR;
@@ -19,8 +20,8 @@
             "/images/autos/" + localStorage.getItem("imageVehicle");
         document.getElementById("ad").innerHTML = adi.toFixed(2);
         document.getElementById("as").innerHTML = (adi * dolar).toFixed(2);
-        document.getElementById("igvs").innerHTML = calculateIgv(price * dolar);
-        document.getElementById("igvd").innerHTML = calculateIgv(price);
+        document.getElementById("igvs").innerHTML = (igv * dolar).toFixed(2);
+        document.getElementById("igvd").innerHTML = igv.toFixed(2);
         document.getElementById("chd").innerHTML = chofer.toFixed(2);
         document.getElementById("chs").innerHTML = (chofer * dolar).toFixed(2);
         document.getElementById("aed").innerHTML = aero.toFixed(2);
@@ -32,24 +33,24 @@
             dropoff,
             chofer,
             aero,
-            adi
-        );
+            adi,
+            igv
+        ).toFixed(2);
         document.getElementById("tos").innerHTML = (
-            calculateTotal(price, dropoff, chofer, aero, adi) * dolar
+            calculateTotal(price, dropoff, chofer, aero, adi, igv) * dolar
         ).toFixed(2);
         let arrAdd = localStorage.getItem("addAbrev").split(",")
         let html = ""
         for (var i=0; i < arrAdd.length; i++) {
             html += "<li>"+ arrAdd[i] + "</li>";
         }
-        console.log(html)
         document.getElementById("adl").innerHTML = html
     } else {
         window.location.href = "/";
     }
 
-    function calculateTotal(veh, drop, chof, aero, add) {
-        let total = veh + drop + chof + aero + add;
+    function calculateTotal(veh, drop, chof, aero, add, igv) {
+        let total = veh + drop + chof + aero + add + igv;
         localStorage.setItem("total", total);
         return total;
     }
