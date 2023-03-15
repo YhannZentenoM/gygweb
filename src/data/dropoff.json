@@ -130,5 +130,41 @@
         "destino": "PUNO",
         "precio": 220,
         "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "CHICLAYO",
+        "precio": 750,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "PIURA",
+        "precio": 900,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "PUNO",
+        "precio": 200,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "TACNA",
+        "precio": 180,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "CUSCO - AEROPUERTO",
+        "destino": "LIMA",
+        "precio": 600,
+        "aeropuerto": 5
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "AREQUIPA - AEROPUERTO",
+        "precio": 280,
+        "aeropuerto": 12
     }
 ]

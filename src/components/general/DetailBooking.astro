@@ -1,13 +1,13 @@
 <script>
     if (localStorage.getItem("formData")) {
-        let dolar = parseFloat(localStorage.getItem("dolar"));
-        let adi = parseFloat(localStorage.getItem("totalAditional"));
+        let dolar = +localStorage.getItem("dolar");
         var formObject = JSON.parse(localStorage.getItem("formData"));
         let dias = +formObject.inpCantidadD >= 7 ? +formObject.inpCantidadD - 1 : formObject.inpCantidadD;
         let price = +localStorage.getItem("priceVehicle") * dias;
+        let adi = +localStorage.getItem("totalAditional") * dias;
         let chofer = priceChofer(formObject.inpChofer) * dias;
-        let aero = parseFloat(localStorage.getItem("aeropuerto"));
-        let dropoff = parseFloat(localStorage.getItem("dropoff"));
+        let aero = +localStorage.getItem("aeropuerto");
+        let dropoff = +localStorage.getItem("dropoff");
         let igv = Number(calculateIgv(price))
         document.getElementById("cd").innerHTML = dias;
         document.getElementById("cr").innerHTML = formObject.inpCiudadR;
@@ -17,7 +17,7 @@
         document.getElementById("dv").innerHTML = price.toFixed(2);
         document.getElementById("sv").innerHTML = (price * dolar).toFixed(2);
         document.getElementById("iv").src =
-            "/images/autos/" + localStorage.getItem("imageVehicle");
+            "./images/autos/" + localStorage.getItem("imageVehicle");
         document.getElementById("ad").innerHTML = adi.toFixed(2);
         document.getElementById("as").innerHTML = (adi * dolar).toFixed(2);
         document.getElementById("igvs").innerHTML = (igv * dolar).toFixed(2);
