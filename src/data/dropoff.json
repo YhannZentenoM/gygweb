@@ -1,6 +1,12 @@
 [
     {
         "origen": "AREQUIPA",
+        "destino": "AREQUIPA - AEROPUERTO",
+        "precio": 0,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA",
         "destino": "CUSCO",
         "precio": 280,
         "aeropuerto": 0
@@ -10,12 +16,6 @@
         "destino": "CUSCO - AEROPUERTO",
         "precio": 280,
         "aeropuerto": 5
-    },
-    {
-        "origen": "AREQUIPA - AEROPUERTO",
-        "destino": "CUSCO",
-        "precio": 280,
-        "aeropuerto": 12
     },
     {
         "origen": "AREQUIPA",
@@ -42,12 +42,6 @@
         "aeropuerto": 0
     },
     {
-        "origen": "AREQUIPA - AEROPUERTO",
-        "destino": "LIMA",
-        "precio": 480,
-        "aeropuerto": 12
-    },
-    {
         "origen": "AREQUIPA",
         "destino": "CHICLAYO",
         "precio": 750,
@@ -66,6 +60,24 @@
         "aeropuerto": 0
     },
     {
+        "origen": "AREQUIPA",
+        "destino": "VALLE SAGRADO",
+        "precio": 335,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "CUSCO",
+        "precio": 280,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "LIMA",
+        "precio": 480,
+        "aeropuerto": 12
+    },
+    {
         "origen": "AREQUIPA - AEROPUERTO",
         "destino": "CUSCO - AEROPUERTO",
         "precio": 280,
@@ -78,34 +90,76 @@
         "aeropuerto": 24
     },
     {
-        "origen": "CUSCO",
-        "destino": "LIMA",
-        "precio": 600,
-        "aeropuerto": 0
-    },
-    {
-        "origen": "AREQUIPA",
-        "destino": "VALLE SAGRADO",
-        "precio": 335,
-        "aeropuerto": 0
-    },
-    {
         "origen": "AREQUIPA - AEROPUERTO",
         "destino": "VALLE SAGRADO",
         "precio": 335,
         "aeropuerto": 12
     },
     {
-        "origen": "CUSCO",
-        "destino": "VALLE SAGRADO",
-        "precio": 55,
-        "aeropuerto": 0
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "CHICLAYO",
+        "precio": 750,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "PIURA",
+        "precio": 900,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "PUNO",
+        "precio": 200,
+        "aeropuerto": 12
+    },
+    {
+        "origen": "AREQUIPA - AEROPUERTO",
+        "destino": "TACNA",
+        "precio": 180,
+        "aeropuerto": 12
     },
     {
         "origen": "CUSCO - AEROPUERTO",
         "destino": "VALLE SAGRADO",
         "precio": 55,
         "aeropuerto": 5
+    },
+    {
+        "origen": "CUSCO - AEROPUERTO",
+        "destino": "LIMA",
+        "precio": 600,
+        "aeropuerto": 5
+    },
+    {
+        "origen": "CUSCO - AEROPUERTO",
+        "destino": "TACNA",
+        "precio": 440,
+        "aeropuerto": 5
+    },
+    {
+        "origen": "CUSCO - AEROPUERTO",
+        "destino": "CHICLAYO",
+        "precio": 840,
+        "aeropuerto": 5
+    },
+    {
+        "origen": "CUSCO - AEROPUERTO",
+        "destino": "PIURA",
+        "precio": 1050,
+        "aeropuerto": 5
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "LIMA",
+        "precio": 600,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "VALLE SAGRADO",
+        "precio": 55,
+        "aeropuerto": 0
     },
     {
         "origen": "CUSCO",
@@ -132,39 +186,27 @@
         "aeropuerto": 0
     },
     {
-        "origen": "AREQUIPA - AEROPUERTO",
-        "destino": "CHICLAYO",
-        "precio": 750,
-        "aeropuerto": 12
-    },
-    {
-        "origen": "AREQUIPA - AEROPUERTO",
-        "destino": "PIURA",
-        "precio": 900,
-        "aeropuerto": 12
-    },
-    {
-        "origen": "AREQUIPA - AEROPUERTO",
-        "destino": "PUNO",
-        "precio": 200,
-        "aeropuerto": 12
-    },
-    {
-        "origen": "AREQUIPA - AEROPUERTO",
-        "destino": "TACNA",
-        "precio": 180,
-        "aeropuerto": 12
-    },
-    {
-        "origen": "CUSCO - AEROPUERTO",
-        "destino": "LIMA",
-        "precio": 600,
-        "aeropuerto": 5
-    },
-    {
         "origen": "CUSCO",
         "destino": "AREQUIPA - AEROPUERTO",
         "precio": 280,
         "aeropuerto": 12
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "TACNA",
+        "precio": 440,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "CHICLAYO",
+        "precio": 840,
+        "aeropuerto": 0
+    },
+    {
+        "origen": "CUSCO",
+        "destino": "PIURA",
+        "precio": 1050,
+        "aeropuerto": 0
     }
 ]
