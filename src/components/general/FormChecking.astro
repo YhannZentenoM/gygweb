@@ -13,7 +13,7 @@
         var formObjectCheck = JSON.parse(localStorage.getItem("formChecking"));
         var formObject = JSON.parse(localStorage.getItem("formData"));
 
-        fetch("https://www.gygrentacar.com/emailconfirmation/sendMail.php", {
+        fetch("https://gygrentacar.com/emailconfirmation/sendMail.php", {
             method: "POST",
             body: JSON.stringify({
                 email: formObjectCheck.mail,
@@ -42,13 +42,14 @@
                 total: localStorage.getItem("total"),
                 abreviado: localStorage.getItem("addAbrev"),
                 adicional: localStorage.getItem("totalAditional"),
-                carimg: "test.gygrentacar.com/images/autos/" + localStorage.getItem("imageVehicle")
+                carimg: "https://gygrentacar.com/images/autos/" + localStorage.getItem("imageVehicle")
             }),
             headers: {
                 "Content-Type": "application/json",
             },
         })
             .then((response) => {
+                console.log(response)
                 if (response.ok) {
                     localStorage.clear();
                     window.location.href = "/confirmation";

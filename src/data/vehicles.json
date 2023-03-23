@@ -1,7 +1,7 @@
 [
     {
         "name":"Hyundai I-10 or Similar",
-        "maleteras":2,
+        "maletas":2,
         "pasajeros":4,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -14,7 +14,7 @@
     },
     {
         "name":"Hyundai I-10 Sedan or Similar",
-        "maleteras":2,
+        "maletas":2,
         "pasajeros":4,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -27,7 +27,7 @@
     },
     {
         "name":"Hyundai Verna Sedan or Similiar",
-        "maleteras":3,
+        "maletas":3,
         "pasajeros":4,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -40,7 +40,7 @@
     },
     {
         "name":"Nissan Versa Sedan or Similar",
-        "maleteras":4,
+        "maletas":4,
         "pasajeros":5,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -53,7 +53,7 @@
     },
     {
         "name":"Hyundai Accent Sedan or Similar",
-        "maleteras":4,
+        "maletas":4,
         "pasajeros":5,
         "caja":"Automático",
         "aire":"Aire Acondicionado",
@@ -66,7 +66,7 @@
     },
     {
         "name":"VW Jetta Sedan or Similar",
-        "maleteras":5,
+        "maletas":5,
         "pasajeros":5,
         "caja":"Automático",
         "aire":"Aire Acondicionado",
@@ -79,7 +79,7 @@
     },
     {
         "name":"Hyundai Tucson SUV or Similar",
-        "maleteras":5,
+        "maletas":5,
         "pasajeros":5,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -92,7 +92,7 @@
     },
     {
         "name":"Mazda CX5 SUV or Similar",
-        "maleteras":5,
+        "maletas":5,
         "pasajeros":5,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -105,7 +105,7 @@
     },
     {
         "name":"VW Tiguan SUV or Similar",
-        "maleteras":5,
+        "maletas":5,
         "pasajeros":5,
         "caja":"Automático",
         "aire":"Aire Acondicionado",
@@ -118,7 +118,7 @@
     },
     {
         "name":"Toyota Hilux 4x4 or Similar",
-        "maleteras":7,
+        "maletas":7,
         "pasajeros":5,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -131,7 +131,7 @@
     },
     {
         "name":"Toyota RAV4 SUV or Similar",
-        "maleteras":5,
+        "maletas":5,
         "pasajeros":5,
         "caja":"Automático",
         "aire":"Aire Acondicionado",
@@ -144,7 +144,7 @@
     },
     {
         "name":"Hyundai Santa Fe SUV or Similar",
-        "maleteras":3,
+        "maletas":3,
         "pasajeros":7,
         "caja":"Automático",
         "aire":"Aire Acondicionado",
@@ -157,7 +157,7 @@
     },
     {
         "name":"Hyundai Staria MINIVAN or Similar MT",
-        "maleteras":3,
+        "maletas":3,
         "pasajeros":11,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -170,7 +170,7 @@
     },
     {
         "name":"Toyota Fortuner or Similar MT",
-        "maleteras":5,
+        "maletas":5,
         "pasajeros":7,
         "caja":"Manual",
         "aire":"Aire Acondicionado",
@@ -183,7 +183,7 @@
     },
     {
         "name":"Dodge Durango SUV or Similar AT",
-        "maleteras":3,
+        "maletas":3,
         "pasajeros":7,
         "caja":"Automático",
         "aire":"Aire Acondicionado",
@@ -196,7 +196,7 @@
     },
     {
         "name":"Toyota Prado or Similar AT",
-        "maleteras":3,
+        "maletas":3,
         "pasajeros":7,
         "caja":"Automático",
         "aire":"Aire Acondicionado",
