@@ -51,7 +51,7 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
         });
     });
 
-    let buttons = document.getElementsByClassName("btn-booking");
+    const buttons = document.getElementsByClassName("btn-booking");
     Array.from(buttons).forEach(function (button) {
         button.addEventListener("click", function () {
             localStorage.setItem(
@@ -116,15 +116,6 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
         <div class="container mx-auto">
             {
                 vehicles.map((vehicle) => (
-                    // <VehicleBooking
-                    //     name={`${vehicle.name}`}
-                    //     pasajeros={`${vehicle.pasajeros}`}
-                    //     maletas={`${vehicle.maletas}`}
-                    //     caja={`${vehicle.caja}`}
-                    //     aire={`${vehicle.aire}`}
-                    //     image={`${vehicle.imagen}`}
-                    //     precio={vehicle.precio}
-                    // />
                     <VehicleBooking data={vehicle} />
                 ))
             }
