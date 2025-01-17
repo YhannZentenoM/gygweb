@@ -82,9 +82,9 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
 
 <Layout title="Itinerario">
     <section class="bg-white pt-20">
-        <div class="container mx-auto px-20">
+        <div class="container mx-auto px-5 md:px-20">
             <HeaderTitle title="Tú" subtitle="Itinerario" />
-            <div class="flex flex-wrap justify-center py-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 justify-center py-10">
                 {
                     aditionals.map((aditional) => (
                         <CheckBoxLabel
@@ -99,9 +99,9 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
         </div>
     </section>
     <section class="bg-white pb-10">
-        <div class="container mx-auto px-20">
+        <div class="container mx-auto px-5 md:px-20">
             <h2 class="uppercase text-3xl font-semibold">Datos reserva</h2>
-            <div class="flex flex-wrap mt-3">
+            <div class="grid grid-cols-1 md:grid-cols-3 mt-3">
                 <DataBooking title="Ciudad Recojo" data="it-ciurec" />
                 <DataBooking title="Fecha Recojo" data="it-ferec" />
                 <DataBooking title="Hora Recojo" data="it-hrec" />
@@ -116,15 +116,16 @@ import VehicleBooking from "../components/general/VehicleBooking.astro";
         <div class="container mx-auto">
             {
                 vehicles.map((vehicle) => (
-                    <VehicleBooking
-                        name={`${vehicle.name}`}
-                        pasajeros={`${vehicle.pasajeros}`}
-                        maletas={`${vehicle.maletas}`}
-                        caja={`${vehicle.caja}`}
-                        aire={`${vehicle.aire}`}
-                        image={`${vehicle.imagen}`}
-                        precio={vehicle.precio}
-                    />
+                    // <VehicleBooking
+                    //     name={`${vehicle.name}`}
+                    //     pasajeros={`${vehicle.pasajeros}`}
+                    //     maletas={`${vehicle.maletas}`}
+                    //     caja={`${vehicle.caja}`}
+                    //     aire={`${vehicle.aire}`}
+                    //     image={`${vehicle.imagen}`}
+                    //     precio={vehicle.precio}
+                    // />
+                    <VehicleBooking data={vehicle} />
                 ))
             }
         </div>

@@ -1,37 +1,47 @@
 ---
 interface Props {
-    name: string;
-    maletas: string;
-    pasajeros: string;
-    caja: string;
-    aire: string;
-    image: string;
-    precio: number;
+    // name: string;
+    // maletas: string;
+    // pasajeros: string;
+    // caja: string;
+    // aire: string;
+    // image: string;
+    // precio: number;
+    data: any;
 }
-const { name, maletas, pasajeros, caja, aire, precio, image } = Astro.props;
+const { data } = Astro.props;
+const { name, maletas, pasajeros, caja, aire, precio, imagen, motor, media, puertos, camaras, puertas, lunas, condiciones } = data;
 let preciosigv = (precio / 1.18).toFixed(2);
 ---
 
-<div class="flex items-center justify-center w-full md:w-11/12 mx-auto py-10 vehicle-booking">
-    <div class="p-5 flex-1">
-        <img src={`/images/autos/${image}`} alt="auto" class="w-4/5 mx-auto" />
+<div class="flex flex-col md:flex-row items-center justify-center w-full md:w-11/12 mx-auto py-10 vehicle-booking">
+    <div class="p-5 flex-1 text-right">
+        <img src={`/images/autos/${imagen}`} alt="auto" class="w-4/5 mx-auto" />
+        <small class="pr-10 italic">Imagen referencial</small>
     </div>
     <div class="flex flex-col p-5 flex-1">
         <h4 class="font-semibold text-base md:text-xl">{name}</h4>
         <ul class="font-semibold text-sm mt-3">
             <li>{pasajeros} Pasajeros</li>
-            <li>{maletas} maletas</li>
-            <li>{caja}</li>
+            <li>Maletas: {maletas}</li>
+            <li>Transmisión: {caja}</li>
             <li>{aire}</li>
+            <li>Motor: {motor}</li>
+            <li>{media}</li>
+            <li>Puertos: {puertos}</li>
+            <li>{camaras}</li>
+            <li>Puertas: {puertas}</li>
+            <li>Lunas {lunas}</li>
+            <li>Condiciones: {condiciones}</li>
         </ul>
     </div>
     <div class="flex flex-col font-semibold p-5 flex-1">
-        <p>S/ <span class="price-soles-veh"></span></p>
+        <p>S/ <span class="price-soles-veh text-xl"></span></p>
         <p>$ <span>{preciosigv}</span></p>
         <button
             type="button"
-            class="btn-booking uppercase px-12 py-3 mt-3 bg-yellow-400 w-1/2"
-            data-image={`${image}`}
+            class="btn-booking uppercase px-12 py-3 mt-3 bg-yellow-400 w-full md:w-1/2"
+            data-image={`${imagen}`}
             data-price={`${preciosigv}`}
             data-name={`${name}`}
             >Reservar</button

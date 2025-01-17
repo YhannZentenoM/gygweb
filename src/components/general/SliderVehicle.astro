@@ -11,11 +11,11 @@ const { name, image, detail, price } = Astro.props;
 let pricesigv = (+price / 1.18).toFixed(2);
 ---
 
-<li class=" p-1">
+<li class="p-1">
     <div class="relative border-4 border-white">
         <div class="h-56 flex flex-col justify-between text-center">
             <div class="pt-4 pl-4 pr-4">
-                <img src={`/images/autos/${image}`} alt="auto" class="w-full aspect-[530/232]" loading="lazy" />
+                <img src={`/images/autos/${image}`} alt="auto" class="w-full max-w-[280px] aspect-[530/232] object-cover" loading="lazy" />
             </div>
             <h3 class="text-xl uppercase font-semibold text-balance">{name}</h3>
         </div>
