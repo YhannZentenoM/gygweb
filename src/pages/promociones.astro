@@ -1,18 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/web/Navbar.astro";
-import Footer from "../components/web/Footer.astro";
 import HeaderTitle from "../components/general/HeaderTitle.astro";
-import FormMessage from "../components/web/FormMessage.astro";
 ---
 
 <Layout title="Itinerario">
-    <Navbar />
     <section class="bg-white py-20">
-        <div class="container mx-auto">
-            <HeaderTitle title="Alianzas" subtitle="Estratégicas" />
+        <div class="max-w-7xl mx-auto">
+            <HeaderTitle title="Nuestras" subtitle="Promociones" />
+        </div>
+        <div class="w-full md:max-w-5xl px-5 md:px-0 mx-auto mt-10 md:mt-5">
+            <ul class="list-disc list-inside">
+                <li class="p-2">
+                    Damos un día libre por semana, usa 7 días y solo paga por 6 días 
+                </li>
+                <li class="p-2">
+                    A partir del 4 día, podemos dar kilometraje ilimitado
+                </li>
+                <li class="p-2">
+                    En el alquiler por mes, damos una tarifa especial
+                </li>
+                <li class="p-2">
+                    Atención 24 horas los 7 días de la semana
+                </li>
+            </ul>
         </div>
     </section>
-    <FormMessage />
-    <Footer />
 </Layout>

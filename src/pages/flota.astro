@@ -1,11 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/web/Navbar.astro";
-import Footer from "../components/web/Footer.astro";
 import HeaderTitle from "../components/general/HeaderTitle.astro";
-import FormMessage from "../components/web/FormMessage.astro";
 import vehicles from "../data/vehicles.json";
 import SliderVehicle from "../components/general/SliderVehicle.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <script>
@@ -15,28 +13,41 @@ import SliderVehicle from "../components/general/SliderVehicle.astro";
         items: 1,
         slideBy: "page",
         autoplay: true,
-        gutter: 20,
-        controls: false,
+        mouseDrag: true,
+        controls: true,   
+        controlsContainer: ".custom-controls", // Contenedor que agrupa los botones prev/next
+    prevButton: ".custom-prev", // Botón personalizado para "prev"
+    nextButton: ".custom-next",     
         nav: false,
         autoplayHoverPause: true,
         autoplayButtonOutput: false,
         responsive: {
             640: {
-                items: 3
+                items: 2
             },
             900: {
+                items: 3
+            },
+            1200: {
                 items: 4
             }
         }
     });
 </script>
 
-<Layout title="Itinerario">
-    <Navbar />
+<Layout title="Flota">
     <section class="bg-white py-20 bg-section">
-        <div class="container mx-auto">
+        <div class="max-w-7xl mx-auto">
             <HeaderTitle title="Nuestros" subtitle="Vehículos" />
             <div class="mt-20">
+                <div class="custom-controls">
+                    <button class="custom-prev -rotate-90">
+                        <Icon name="arrow" class="text-3xl hover:scale-110 transition-transform duration-300" />
+                    </button>
+                    <button class="custom-next rotate-90">
+                        <Icon name="arrow" class="text-3xl hover:scale-110 transition-transform duration-300" />
+                    </button>
+                </div>
                 <ul class="my-slider">
                     {
                         vehicles.map((vehicle) => (
@@ -50,8 +61,12 @@ import SliderVehicle from "../components/general/SliderVehicle.astro";
                     }
                 </ul>
             </div>
+            <div class="px-5 mt-14">
+                <h3 class="text-2xl font-bold">Información de kilometraje</h3>
+                <p>Todos nuestros vehículos cuentan con 250 km libres por día que es acumulable en todos los días alquilados.</p>
+                <h3 class="text-2xl font-bold mt-5 md:mt-10">Información de seguro</h3>
+                <p>La tarifa indicada cuenta con el seguro de alquiler básico, cubre a los pasajeros, el vehículo y terceras personas, es un seguro con deducible que en caso de autos es de S/ 3500.00 más impuesto y en camionetas S/ 4300.00 más impuesto.</p>
+            </div>
         </div>
     </section>
-    <FormMessage />
-    <Footer />
 </Layout>

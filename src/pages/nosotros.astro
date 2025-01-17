@@ -1,16 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/web/Navbar.astro";
-import Footer from "../components/web/Footer.astro";
-import FormMessage from "../components/web/FormMessage.astro";
 ---
 
 <Layout title="Quienes somos">
-    <Navbar />
-    <section class="h-screen banner banner flex items-center">
-        <div class="container mx-auto">
+    <section class="h-screen banner flex items-center">
+        <div class="max-w-7xl w-full mx-auto">
             <h2 class="text-white uppercase font-light">
-                GYG Alquiler de Automoviles, <span class="font-bold"
+                EUROPCAR - GYG Alquiler de Automoviles, <span class="font-bold"
                     >are you!</span>
             </h2>
             <h2
@@ -87,6 +83,4 @@ import FormMessage from "../components/web/FormMessage.astro";
             </div>
         </div>
     </section>
-    <FormMessage />
-    <Footer />
 </Layout>

@@ -1,8 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/web/Navbar.astro";
-import Footer from "../components/web/Footer.astro";
-import FormMessage from "../components/web/FormMessage.astro";
 ---
 
 <script>
@@ -23,29 +20,28 @@ import FormMessage from "../components/web/FormMessage.astro";
 </script> 
 
 <Layout title="Conozca el Perú">
-    <Navbar />
     <section class="py-20">
-        <div class="container mx-auto">
+        <div class="max-w-7xl mx-auto">
             <video id="reproductor" controls class="w-full">
                 <source id="" src="/videos/GYG1.mp4" type="video/mp4">
             </video>
             <div class="mt-5 flex flex-wrap justify-center">
-                <div class="container__video flex align-center max-w-xl p-4 m-4 border rounded-xl border-white cursor-pointer" data-video="/videos/GYG1.mp4">
-                    <img src="/images/Cotahuasi.jpg" alt="" class="max-w-xs">
+                <div class="container__video flex flex-col md:flex-row align-center w-full md:max-w-xl p-4 m-4 border rounded-xl border-white cursor-pointer" data-video="/videos/GYG1.mp4">
+                    <img src="/images/Cotahuasi.jpg" alt="" class="w-full md:max-w-xs">
                     <div class="text-white p-4">
                         <h2 class="text-3xl font-semibold">Cotahuasi</h2>
                         <p>Recorra Arequipa, Puno, Cusco, Nazca y demas atractivos de este hermoso país.</p>
                     </div>
                 </div>
-                <div class="container__video flex align-center max-w-xl p-4 m-4 border rounded-xl border-white cursor-pointer" data-video="videos/Cotahuasi.mp4">
-                    <img src="/images/Cotahuasi2.jpg" alt="" class="max-w-xs">
+                <div class="container__video flex flex-col md:flex-row align-center w-full md:max-w-xl p-4 m-4 border rounded-xl border-white cursor-pointer" data-video="videos/Cotahuasi.mp4">
+                    <img src="/images/Cotahuasi2.jpg" alt="" class=w-full md:"max-w-xs">
                     <div class="text-white p-4">
                         <h2 class="text-3xl font-semibold">Cotahuasi</h2>
                         <p>Recorra Arequipa, Puno, Cusco, Nazca y demas atractivos de este hermoso país.</p>
                     </div>
                 </div>
-                <div class="container__video flex align-center max-w-xl p-4 m-4 border rounded-xl border-white cursor-pointer" data-video="videos/GYG2.mp4">
-                    <img src="/images/Mollebaya.jpg" alt="" class="max-w-xs">
+                <div class="container__video flex flex-col md:flex-row align-center w-full md:max-w-xl p-4 m-4 border rounded-xl border-white cursor-pointer" data-video="videos/GYG2.mp4">
+                    <img src="/images/Mollebaya.jpg" alt="" class="w-full md:max-w-xs">
                     <div class="text-white p-4">
                         <h2 class="text-3xl font-semibold">Mollebaya</h2>
                         <p>Recorra Arequipa, Puno, Cusco, Nazca y demas atractivos de este hermoso país.</p>
@@ -54,6 +50,4 @@ import FormMessage from "../components/web/FormMessage.astro";
             </div>
         </div>
     </section>
-    <FormMessage />
-    <Footer />
 </Layout>

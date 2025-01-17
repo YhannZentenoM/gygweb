@@ -1,83 +1,83 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from 'astro-icon/components'
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+const pathName = Astro.url.pathname
+
 ---
 
 <header class="py-10">
-    <div class="container flex-none justify-between mx-auto w-full lg:flex">
+    <div class="container flex-none justify-between mx-auto w-full lg:flex px-5 md:px-0">
         <Astronav>
             <div class="flex justify-between">
                 <a href="/">
                     <img src="/images/logo.svg" alt="Logo" class="w-56" />
                 </a>
                 <div class="block lg:hidden">
-                    <MenuIcon class="w-4 h-4 text-gray-800" />
+                    <MenuIcon class="w-12 text-white" />
                 </div>
             </div>
-            <MenuItems class="hidden lg:flex">
+            <MenuItems class="hidden lg:flex gap-2 mt-3 md:mt-0">
                 <ul
                     class="flex flex-col lg:flex-row lg:gap-1 text-white uppercase text-xs font-medium"
                 >
-                    <li
-                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2"
-                    >
-                        <a href="/">Reservas</a>
-                    </li>
-                    <li
-                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2"
-                    >
-                        <a href="/flota">Flota</a>
-                    </li>
-                    <li
-                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2"
-                    >
-                        <a href="/promociones">Promociones</a>
-                    </li>
-                    <li
-                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2"
-                    >
-                        <a href="/conozca">Conozca el Perú</a>
-                    </li>
-                    <li
-                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2"
-                    >
-                        <a href="/nosotros">¿Quienes somos?</a>
-                    </li>
-                    <li
-                        class="hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2"
-                    >
-                        <a href="/contactenos">Contáctenos</a>
-                    </li>
+                    <a href="/" class:list={`hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2 ${pathName === "/" && "bg-yellow-400 text-black" }`}>
+                        <li>
+                            Reservas
+                        </li>
+                    </a>
+                    <a href="/flota" class={`hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2 ${pathName === "/flota" && "bg-yellow-400 text-black"}`}>
+                        <li>
+                            Flota
+                        </li>
+                    </a>
+                    <a href="/promociones" class={`hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2 ${pathName === "/promociones" && "bg-yellow-400 text-black"}`}>
+                        <li>
+                            Promociones
+                        </li>
+                    </a>
+                    <a href="/conozca" class={`hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2 ${pathName === "/conozca" && "bg-yellow-400 text-black"}`}>
+                        <li>
+                            Conozca el Perú
+                        </li>
+                    </a>
+                    <a href="/nosotros" class={`hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2 ${pathName === "/nosotros" && "bg-yellow-400 text-black"}`}>
+                        <li>
+                            ¿Quienes somos?
+                        </li>
+                    </a>
+                    <a href="/contactenos" class={`hover:bg-yellow-400 hover:text-black transition-all duration-300 py-3 px-2 ${pathName === "/contactenos" && "bg-yellow-400 text-black"}`}>
+                        <li>
+                            Contáctenos
+                        </li>
+                    </a>
                     <li
                         class="bg-white rounded-3xl text-black font-medium text-xs p-2 flex items-center"
                     >
-                        <Icon name="mdi:phone" class="w-5" /> +51 959639873 / +51 959923511
+                        <Icon name="phone" class="w-5" /> +51 959639873 / +51 959923511
                     </li>
                 </ul>
-                <ul class="flex items-center gap-x-2 mr-2">
+                <ul class="flex items-center gap-x-2 mt-2 md:mt-0">
                     <li>
                         <a href="https://www.facebook.com/gygarequipa/" target="_blank">
                             <Icon
-                                name="ion:social-facebook"
-                                class="w-5 text-yellow-500"
+                                name="facebook"
+                                class="text-xl text-yellow-500 hover:scale-110 hover:text-white transition-all duration-300"
                             />
                         </a>
                     </li>
-
                     <li>
                         <a href="https://instagram.com/gyg.alquilerdeautomoviles?igshid=ZDdkNTZiNTM=" target="_blank"
                             ><Icon
-                                name="ion:logo-instagram"
-                                class="w-5 text-yellow-500"
+                                name="instagram"
+                                class="text-xl text-yellow-500 hover:scale-110 hover:text-white transition-all duration-300"
                             /></a
                         >
                     </li>
-
-                    <li>
+                    <li class="">
                         <a href="#"
                             ><Icon
-                                name="ion:logo-youtube"
-                                class="w-5 text-yellow-500"
+                                name="youtube"
+                                class="text-xl text-yellow-500 hover:scale-110 hover:text-white transition-all duration-300"
                             /></a
                         >
                     </li>

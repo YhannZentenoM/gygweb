@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 interface Props {
     name: string;
     image: string;
@@ -9,22 +11,26 @@ const { name, image, detail, price } = Astro.props;
 let pricesigv = (+price / 1.18).toFixed(2);
 ---
 
-<li class="border-8 border-white p-4 relative h-full">
-    <div class="pt-4">
-        <img src={`/images/autos/${image}`} alt="auto" class="w-full" />
-        <h3 class="text-xl uppercase font-semibold mt-2">{name}</h3>
-    </div>
-    <div class="max-h-52 border-t-8 mt-5 border-white flex items-center justify-center">
-        <img src={`/images/autos/${detail}`} alt="detalle" class="w-4/5 mt-5" />
-    </div>
-    <div class="w-full h-full bg-black bg-opacity-90 absolute top-0 left-0 opacity-0 transition-all duration-300 hover:opacity-100">
-        <a href="/">
-            <div class="flex items-center justify-center bg-white w-12 h-12 rounded-full absolute top-1/2 left-1/2 -mt-12 -ml-6">
-                <img src="/images/mano.png" alt="hand" width="40" />
+<li class=" p-1">
+    <div class="relative border-4 border-white">
+        <div class="h-56 flex flex-col justify-between text-center">
+            <div class="pt-4 pl-4 pr-4">
+                <img src={`/images/autos/${image}`} alt="auto" class="w-full aspect-[530/232]" loading="lazy" />
             </div>
-        </a>
-        <div class="bg-yellow-400 w-full h-16 flex items-center justify-center absolute bottom-0">
-            <p class="text-2xl uppercase text-center font-bold">$ {pricesigv} dólares</p>
+            <h3 class="text-xl uppercase font-semibold text-balance">{name}</h3>
+        </div>
+        <div class="border-t-4 border-white flex items-center justify-center p-2">
+            <img src={`/images/autos/${detail}`} alt="detalle" class="w-56 aspect-[247/95] object-cover" loading="lazy" />
+        </div>
+        <div class="w-full h-full bg-black bg-opacity-75 absolute top-0 left-0 opacity-0 transition-all duration-300 hover:opacity-100">
+            <a href="/">
+                <div class="flex items-center justify-center w-12 h-12 rounded-full absolute top-1/2 left-1/2 -mt-12 -ml-6 animate-ping">
+                    <Icon name="mano" class="text-white text-4xl" />
+                </div>
+            </a>
+            <div class="bg-yellow-400 w-full h-24 flex items-center justify-center absolute bottom-0">
+                <p class="text-2xl uppercase text-center font-bold">$ {pricesigv} dólares</p>
+            </div>
         </div>
     </div>
 </li>
