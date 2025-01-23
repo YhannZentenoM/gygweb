@@ -9,14 +9,14 @@ const pathName = Astro.url.pathname
     <div class="container flex-none justify-between mx-auto w-full lg:flex px-5 md:px-0">
         <Astronav>
             <div class="flex justify-between">
-                <a href="/">
-                    <img src="/images/logo.svg" alt="Logo" class="w-56" />
+                <a href="/" class="hover:scale-105 transition-transform duration-300">
+                    <img src="/images/logo.svg" alt="Logo" class="h-16" />
                 </a>
                 <div class="block lg:hidden">
                     <MenuIcon class="w-12 text-white" />
                 </div>
             </div>
-            <MenuItems class="hidden lg:flex gap-2 mt-3 md:mt-0">
+            <MenuItems class="hidden lg:flex gap-2 mt-3 md:mt-0 items-center">
                 <ul
                     class="flex flex-col lg:flex-row lg:gap-1 text-white uppercase text-xs font-medium"
                 >
@@ -50,12 +50,10 @@ const pathName = Astro.url.pathname
                             Contáctenos
                         </li>
                     </a>
-                    <li
-                        class="bg-white rounded-3xl text-black font-medium text-xs p-2 flex items-center"
-                    >
-                        <Icon name="phone" class="w-5" /> +51 959639873 / +51 959923511
-                    </li>
                 </ul>
+                <span class="bg-white rounded-3xl text-black font-medium text-xs px-3 py-1.5 flex items-center">
+                    <Icon name="phone" class="w-5" /> +51 959639873 / +51 959923511
+                </span>
                 <ul class="flex items-center gap-x-2 mt-2 md:mt-0">
                     <li>
                         <a href="https://www.facebook.com/gygarequipa/" target="_blank">
@@ -77,7 +75,7 @@ const pathName = Astro.url.pathname
                         <a href="#"
                             ><Icon
                                 name="youtube"
-                                class="text-xl text-yellow-500 hover:scale-110 hover:text-white transition-all duration-300"
+                                class="text-[23px] text-yellow-500 hover:scale-110 hover:text-white transition-all duration-300"
                             /></a
                         >
                     </li>
